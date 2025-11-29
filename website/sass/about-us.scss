@@ -1,0 +1,180 @@
+@use '../sass/base/reset' as *;
+@use '../sass/base/typography' as *;
+@use '../sass/abstracts/mixins' as *;
+
+// Layout
+@use '../sass/layouts/containers' as *;
+@use '../sass/layouts/site-header' as *;
+@use '../sass/layouts/site-footer' as *;
+@use '../sass/layouts/buttons' as *;
+@use '../sass/layouts/helpers' as *;
+@use '../sass/layouts/subpage-banner' as *;
+@use '../sass/layouts/breadcrumbs' as *;
+@use '../sass/layouts/subject-based-courses' as *;
+@use '../sass/layouts/certification-brands' as *;
+@use '../sass/layouts/enquiry-section1' as *;
+
+// Components
+@use 'components/main-navigation' as *;
+@use 'components/hero-slider-carousel' as *;
+@use 'components/marquee-carousel' as *;
+@use 'components/certification-partners-carousel' as *;
+@use 'components/featured-courses-carousel' as *;
+@use 'components/trainers-carousel' as *;
+@use 'components/new-batches-carousel' as *;
+@use 'components/photo-gallery' as *;
+@use 'components/testimonials-carousel' as *;
+@use 'components/video-custom-player' as *;
+@use 'components/blogs-list-carousel' as *;
+@use 'components/move-to-top' as *;
+
+/* Vendors */
+@use 'vendors/scroll-animator' as *;
+
+
+
+.about-us-section {
+    &__container {}
+
+    &__heading {
+        @include md-min {
+            margin-bottom: 30px;
+        }
+
+        @include lg-min {
+            margin-bottom: 40px;
+        }
+    }
+
+    &__main {
+        display: grid;
+
+        @include md-min {
+            gap: 30px;
+        }
+
+        @include lg-min {
+            gap: 50px;
+        }
+
+    }
+
+    &__main-col1 {
+        @include md-min {
+            grid-column-start: 1;
+            grid-row-start: 1;
+        }
+    }
+
+    &__main-col-image {
+        border-radius: 10px;
+        width: 100%;
+        max-height: 400px;
+        object-fit: cover;
+        object-position: top;
+
+        @include lg-min {
+            height: 350px;
+        }
+    }
+
+    &__main-col2 {
+        grid-row-start: 1;
+    }
+
+    &__description {}
+}
+
+
+.emigo-service-provider {
+    padding-bottom: 30px;
+
+    @include lg-min {
+        padding-bottom: 50px;
+    }
+
+    &__container {}
+
+    &__header {
+        padding-left: 20px;
+        padding-right: 20px;
+        text-align: center;
+    }
+
+    &__header-logo {
+        margin-bottom: 30px;
+    }
+
+    &__heading {
+        font-size: 16px;
+    }
+
+    &__description {
+        @include lg-min {
+            width: 75%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 40px;
+        }
+    }
+
+    &__section {
+        display: grid;
+        text-align: center;
+        gap: 40px;
+
+        @include sm-min {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include md-min {
+            padding-left: 70px;
+            padding-right: 70px;
+        }
+
+        @include lg-min {
+            grid-template-columns: repeat(4, 1fr);
+            padding-left: 0;
+            padding-right: 0;
+            gap: 20px;
+        }
+    }
+
+    &__section-item {
+        max-width: 270px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 10px;
+        background: #f5f5f5;
+        border-radius: 7px;
+
+        @include lg-min {
+            max-width: initial;
+            padding: 20px;
+            border-radius: 10px;
+        }
+    }
+
+    &__section-item-btn {
+        height: 35px;
+        line-height: 1;
+        background: #e1e1e1;
+        font-size: 12px;
+    }
+
+    &__section-item-heading {
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 15px;
+    }
+
+    &__section-item-image {
+        border-radius: 7px;
+        height: 120px;
+        object-fit: cover;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    &__section-item-description {}
+}

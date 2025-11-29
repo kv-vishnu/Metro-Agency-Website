@@ -1,0 +1,72 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/functions' as *;
+@use '../vendors/splide' as *;
+
+.blogs-list-carousel {
+    background-color: transparent;
+    // border: 3px solid red;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+
+
+    .splide__arrows {
+        justify-content: center;
+        // border: 2px solid red;
+        bottom: 0;
+        top: 100%;
+        gap: 15px;
+        // border: 2px solid green;
+        position: relative;
+        transform: none;
+        order: 2;
+
+        .splide__track {
+            border: 2px solid orange;
+        }
+
+        .splide__arrow {
+            width: 30px;
+            height: 30px;
+            background-color: #666;
+            border-radius: 15px;
+
+            &:first-child {
+                &::after {
+                    // border-left: 0;
+                    border-top: 0;
+                    border-right: 0;
+                    left: 6px;
+                    position: relative;
+                }
+            }
+
+            &:last-child {
+                &::after {
+                    // border-left: 0;
+                    border-bottom: 0;
+                    border-left: 0;
+                    left: 2px;
+                    position: relative;
+                }
+            }
+
+            &::after {
+                content: "";
+                border: 2px solid white;
+                width: 8px;
+                height: 8px;
+                display: flex;
+                transform: rotate(45deg);
+            }
+
+
+            svg {
+                display: none;
+            }
+        }
+    }
+
+}

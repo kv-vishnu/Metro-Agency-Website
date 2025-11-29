@@ -1,0 +1,64 @@
+:root {
+  table {
+    --bs-table-bg: white;
+    --bs-border-color: red;
+  }
+}
+body {
+  font-size: 14px;
+}
+
+.table {
+  margin-bottom: 0;
+}
+
+.table tbody td {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  line-height: 1.65;
+  font-size: 14px;
+}
+.table thead th {
+  font-size: 15px;
+  font-weight: 700;
+  color: #555;
+}
+
+.table thead th:first-child,
+.table tbody td:first-child {
+  width: 50px;
+  padding-left: 15px;
+}
+
+.page-title {
+  background: #e2ebf1;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+
+  > h2 {
+    margin-bottom: 0;
+  }
+}
+
+/* Form  */
+.form-control {
+  border-color: #ebebeb !important;
+  font-size: 14px;
+}
+.form-select {
+  font-size: 14px;
+}
+
+.product-brodhure{
+   background:#949db1;
+      color:white;
+      padding:10px 20px;
+      border-radius:6px;
+      font-size:15px;
+      text-decoration:none;
+      font-weight:600;
+      transition:0.3s;
+      display:inline-block;
+      margin-top:10px
+}

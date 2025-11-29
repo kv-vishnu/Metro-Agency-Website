@@ -1,0 +1,118 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../abstracts/functions" as *;
+
+.course-list {
+  &__container {
+  }
+
+  &__wrapper {
+    display: grid;
+    gap: 20px;
+
+    @include sm-min {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include lg-min {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+  }
+
+  &__item-description {
+    font-size: 13px;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+    text-overflow: unset;
+  }
+
+  &__item-heading {
+    font-size: 14px;
+    line-height: 1.35;
+    min-height: 43px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 13px;
+    color: #3096d5;
+    padding: 20px;
+    background: #fdfdfd;
+    border-radius: 7px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  &__item {
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: left;
+    position: relative;
+    transition: all 0.25s linear 0s !important;
+    z-index: 0;
+    &:hover {
+      background-color: #ececec;
+      transform: scaleX(1.02) scaleY(1.02);
+    }
+    @include sm-min {
+      padding: 25px;
+    }
+
+    @include lg-min {
+      // min-height: 500px;
+    }
+  }
+
+  &__item-link {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__item-logo {
+    display: flex;
+    max-height: 55px;
+    min-width: 195px;
+  }
+
+  &__item-logo-wrapper {
+    background-color: #fdfdfd;
+    height: 90px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__item-image-wrapper {
+    margin-bottom: 15px;
+  }
+
+  &__item-btn-group {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 10;
+  }
+
+  &__item-image {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    display: none;
+  }
+
+  &__list {
+  }
+
+  &__item-enquiry-btn {
+  }
+}

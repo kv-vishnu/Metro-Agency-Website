@@ -1,0 +1,39 @@
+{
+  "dependencies": {
+    "aos": "^2.3.4",
+    "intl-tel-input": "^25.11.2",
+    "webpack-remove-empty-scripts": "^1.1.1"
+  },
+  "name": "website",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "bs": "browser-sync start --proxy \"localhost.emigo-website\" --files \"**/*.php, **/*.css, **/*.js\" --no-notify",
+    "sass": "sass --watch website/sass:website/css --style=expanded --source-map",
+    "dev": "concurrently \"npm run sass\" \"npm run bs\" --kill-others-on-fail",
+    "build": "webpack --config webpack.prod.config.js --mode production"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@babel/core": "^7.28.4",
+    "@babel/preset-env": "^7.28.3",
+    "babel-loader": "^10.0.0",
+    "browser-sync": "^3.0.4",
+    "browser-sync-webpack-plugin": "^2.4.0",
+    "clean-webpack-plugin": "^4.0.0",
+    "concurrently": "^9.2.1",
+    "css-loader": "^7.1.2",
+    "css-minimizer-webpack-plugin": "^7.0.2",
+    "mini-css-extract-plugin": "^2.9.4",
+    "sass": "^1.93.2",
+    "sass-loader": "^16.0.5",
+    "terser-webpack-plugin": "^5.3.14",
+    "vite": "^6.3.6",
+    "webpack": "^5.101.3",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2"
+  }
+}

@@ -1,0 +1,103 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/functions' as *;
+
+/* Course List Rev1: Start */
+.course-list-rev1 {
+    &__container {}
+
+    &__wrapper {
+        display: grid;
+        gap: 20px;
+
+        @include sm-min {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include lg-min {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    &__item-description {
+        font-size: 13px;
+        line-height: 1.30;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 6;
+        overflow: hidden;
+        text-overflow: unset;
+
+    }
+
+    &__item-heading {
+        font-size: 14px;
+        line-height: 1.35;
+        min-height: 90px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 13px;
+        color: #3096D5;
+        background: #fcfcfc;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    &__item {
+        background-color: #f1f1f1;
+        padding: 20px;
+        border-radius: 15px;
+        text-align: left;
+
+        @include sm-min {
+            padding: 25px;
+        }
+
+        @include lg-min {
+            // min-height: 500px;
+        }
+    }
+
+    &__item-logo {
+        display: flex;
+        max-height: 55px;
+    }
+
+    &__item-logo-wrapper {
+        background-color: #fcfcfc;
+        height: 90px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    &__item-image-wrapper {
+        margin-bottom: 15px;
+    }
+
+    &__item-btn-group {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        z-index: 10;
+    }
+
+    &__item-image {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    &__list {}
+
+    &__item-enquiry-btn {}
+}
+
+/* Course List Rev1: End */

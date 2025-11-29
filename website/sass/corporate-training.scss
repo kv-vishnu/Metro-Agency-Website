@@ -1,0 +1,1264 @@
+@use '../sass/base/reset' as *;
+@use '../sass/base/typography' as *;
+@use '../sass/abstracts/mixins' as *;
+
+// Layout
+@use '../sass/layouts/containers' as *;
+@use '../sass/layouts/site-header' as *;
+@use '../sass/layouts/site-footer' as *;
+@use '../sass/layouts/buttons' as *;
+@use '../sass/layouts/helpers' as *;
+@use '../sass/layouts/subpage-banner' as *;
+@use '../sass/layouts/breadcrumbs' as *;
+@use '../sass/layouts/subject-based-courses' as *;
+@use '../sass/layouts/certification-brands' as *;
+@use '../sass/layouts/enquiry-section1' as *;
+
+// Components
+@use 'components/main-navigation' as *;
+@use 'components/hero-slider-carousel' as *;
+@use 'components/marquee-carousel' as *;
+@use 'components/certification-partners-carousel' as *;
+@use 'components/featured-courses-carousel' as *;
+@use 'components/trainers-carousel' as *;
+@use 'components/new-batches-carousel' as *;
+@use 'components/photo-gallery' as *;
+@use 'components/testimonials-carousel' as *;
+@use 'components/video-custom-player' as *;
+@use 'components/blogs-list-carousel' as *;
+@use 'components//forms' as *;
+@use 'components/modal' as *;
+@use 'components/move-to-top' as *;
+
+/* Vendors */
+@use 'vendors/scroll-animator' as *;
+
+// Introduction
+
+.introduction {
+    &__col1 {
+        position: relative;
+        display: grid;
+        gap: 20px;
+        height: 170px;
+        background-image: url('../images/monogram-texture-bg-xs.webp');
+        background-repeat: repeat;
+        border-radius: 15px;
+
+
+        @include md-min {
+            height: 250px;
+        }
+
+        @include lg-min {
+            height: 280px;
+            gap: 40px;
+            background-image: url('../images/monogram-texture-bg-lg.webp');
+        }
+    }
+
+    &__col2 {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    &__container {
+        display: grid;
+        gap: 20px;
+
+        @include sm-min {
+            grid-template-columns: 40% 1fr;
+        }
+
+        @include md-min {
+            gap: 35px;
+            grid-template-columns: 50% 1fr;
+        }
+
+        @include lg-min {
+            gap: 65px;
+            grid-template-columns: 43% 1fr;
+        }
+    }
+
+    &__heading {}
+
+    &__image {
+        height: inherit;
+        object-fit: cover;
+        border-radius: 15px;
+        width: 100%;
+        position: relative;
+
+        &::after {
+            content: "";
+            background: #000;
+            opacity: .5;
+        }
+
+    }
+
+    &__monogram {
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+
+    }
+
+    &__monogram-image {
+        width: 120px;
+
+        @include lg-min {
+            width: 140px;
+        }
+    }
+
+    &__paragraph {}
+}
+
+// Monogram Animation: Start
+
+.monogram-icon {
+    width: 120px;
+    height: 120px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeInUp 1s ease-out;
+    z-index: 0;
+
+    @include md-min {
+        width: 140px;
+        height: 140px;
+    }
+
+    @include lg-min {
+        width: 170px;
+        height: 170px;
+    }
+
+    img {
+        position: absolute;
+    }
+
+    &__a1 {
+        left: 0;
+        top: 0;
+        animation: a1 10s ease forwards infinite;
+        opacity: 0;
+        width: 47%;
+    }
+
+    @keyframes a1 {
+        0% {
+            opacity: 0;
+        }
+
+        10% {
+            opacity: 0;
+        }
+
+        15% {
+            opacity: 0;
+        }
+
+
+        25% {
+            opacity: 1;
+        }
+
+        30% {
+            opacity: 1;
+        }
+
+        95% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+        }
+
+    }
+
+    &__a2 {
+        width: 100%;
+        left: 1px;
+        top: 1px;
+        z-index: 2;
+        animation: a2 10s ease forwards infinite;
+
+    }
+
+    @keyframes a2 {
+        0% {
+            transform: rotate(0);
+            opacity: 0;
+        }
+
+        5% {
+            opacity: 1;
+        }
+
+        10% {
+            opacity: 1;
+        }
+
+        15% {
+            transform: rotate(360deg);
+            opacity: 1;
+        }
+
+        30% {
+            opacity: 1;
+            transform: rotate(360deg);
+        }
+
+
+
+        95% {
+            transform: rotate(360deg);
+            opacity: 1;
+        }
+
+        100% {
+            transform: rotate(360deg);
+            opacity: 1;
+        }
+    }
+
+
+    &__a3 {
+        width: 80%;
+        left: 11%;
+        top: 11%;
+        z-index: 2;
+        animation: a3 10s ease forwards infinite;
+    }
+
+    @keyframes a3 {
+        0% {
+            transform: rotate(0);
+            opacity: 1;
+        }
+
+        10% {
+            transform: rotate(0);
+            opacity: 1;
+        }
+
+        20% {
+            transform: rotate(0);
+        }
+
+        25% {
+            opacity: 1;
+        }
+
+        40% {
+            opacity: 1;
+            transform: rotate(360deg);
+        }
+
+        60% {
+            opacity: 1;
+            transform: rotate(360deg);
+        }
+
+        70% {
+            transform: rotate(360deg);
+            opacity: 1;
+        }
+
+        95% {
+            opacity: 1;
+            transform: rotate(360deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+            opacity: 1;
+        }
+    }
+
+    &__a4 {
+        width: 35%;
+        z-index: 3;
+        animation: a4 10s ease forwards infinite;
+        transform: scale(1);
+    }
+
+    @keyframes a4 {
+
+        0% {
+            transform: scale(1);
+        }
+
+        10% {
+            transform: scale(1);
+        }
+
+        20% {
+            transform: scale(0.80);
+        }
+
+        30% {
+            transform: scale(1);
+        }
+
+        40% {
+            transform: scale(1);
+        }
+
+        50% {
+            transform: scale(0.80);
+        }
+
+        60% {
+            transform: scale(1);
+        }
+
+        70% {
+            transform: scale(1);
+        }
+
+        80% {
+            transform: scale(0.80);
+        }
+
+        90% {
+            transform: scale(1);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+
+    }
+}
+
+
+
+
+// Monogram Animation: End
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Trainings
+
+.trainings {
+    &__col1 {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        grid-row-start: 2;
+
+        @include sm-min {
+            grid-row-start: 1;
+        }
+    }
+
+    &__col2 {}
+
+    &__container {
+        display: grid;
+        gap: 20px;
+
+        @include md-min {
+            gap: 60px;
+        }
+    }
+
+    &__heading {}
+
+    &__image {
+        border-radius: 20px;
+        width: 100%;
+
+        @include sm-min {
+            object-fit: cover;
+            display: flex;
+            height: 100%;
+        }
+    }
+
+    &__link {}
+
+    &__paragraph {}
+
+    &__section {
+        display: grid;
+        gap: 20px;
+
+        @include sm-min {
+            grid-template-columns: 45% 1fr;
+            gap: 40px;
+
+            &:last-child {
+                grid-template-columns: 1fr 45%;
+
+                .trainings__col1 {
+                    grid-column-start: 2;
+                }
+            }
+        }
+
+        @include lg-min {
+            grid-template-columns: 1fr 500px;
+            gap: 70px;
+
+            &:last-child {
+                grid-template-columns: 500px 1fr;
+            }
+        }
+    }
+}
+
+// Featured Courses
+
+.featured-courses {
+    &__btn {}
+
+    &__container {}
+
+    &__description {
+        font-size: 13px;
+        line-height: 1.30;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 4;
+        overflow: hidden;
+        text-overflow: unset;
+    }
+
+    &__title {
+        @include md-min {
+            margin-bottom: 40px;
+        }
+    }
+
+    &__details {
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+    &__details-label {
+        font-weight: 600;
+    }
+
+    &__details-row {}
+
+    &__details-value {
+        font-size: 13px;
+    }
+
+    &__heading {
+        font-size: 15px;
+        line-height: 1.35;
+        min-height: 43px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 13px;
+        color: #3096D5;
+    }
+
+    &__item {
+        background-color: #f1f1f1;
+        padding: 20px;
+        border-radius: 15px;
+        text-align: left;
+
+
+        @include sm-min {
+            padding: 25px;
+        }
+    }
+
+    &__logo {}
+
+    &__logo-wrapper {
+        background-color: #fff;
+        height: 90px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    &__image-wrapper {
+        margin-bottom: 15px;
+    }
+
+    &__btn-group {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__image {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+    }
+
+    &__list {}
+}
+
+
+// Service Brief
+
+.service-brief {
+    &__bullets {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 15px;
+        margin-bottom: 20px;
+
+        @include lg-min {
+            padding: 40px;
+        }
+    }
+
+    &__bullets-li {
+        font-size: 14px;
+        position: relative;
+        display: flex;
+        gap: 15px;
+        line-height: 2;
+
+        &::before {
+            top: 7px;
+            position: relative;
+            border: 2px solid #555;
+            border-right: 0;
+            border-top: 0;
+            content: "";
+            display: block;
+            height: .4rem;
+            transform: rotate(-45deg);
+            width: .8rem;
+        }
+    }
+
+    &__bullets-ul {
+        @include sm-min {
+            column-count: 2;
+        }
+
+        @include lg-min {
+            column-count: 3;
+        }
+    }
+
+    &__container {}
+
+    &__heading {
+        @include lg-min {
+            width: 580px;
+            line-height: 1.5;
+        }
+    }
+
+    &__paragraph {}
+
+    &__wrapper {
+        background: #f1f1f1;
+        padding: 20px;
+        border-radius: 15px;
+
+        @include md-min {
+            padding: 30px;
+        }
+
+        @include lg-min {
+            padding: 70px;
+        }
+    }
+}
+
+// Course Categories
+
+.course-categories {
+    &__container {}
+
+    &__content {
+        background-color: #f1f1f1;
+        padding: 20px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+
+        @include lg-min {
+            padding: 30px;
+        }
+    }
+
+    &__heading {
+        @include lg-min {
+            margin-bottom: 40px;
+        }
+    }
+
+    &__item {
+        display: grid;
+        grid-template-rows: 1fr auto;
+    }
+
+    &__item-heading {}
+
+    &__item-description {
+        margin-bottom: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        /* number of lines to show */
+        line-clamp: 4;
+        -webkit-box-orient: vertical;
+    }
+
+    &__item-image {
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        object-fit: cover;
+        width: 100%;
+        max-height: 150px;
+
+        @include sm-min {
+            height: 100%;
+        }
+    }
+
+    &__wrapper {
+        display: grid;
+        gap: 15px;
+
+        @include sm-min {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include md-min {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+    }
+}
+
+// Certifications Categories
+
+.certification-categories {
+    &__banner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        margin-bottom: 20px;
+        clip-path: rect(0 100% 100% 0 round 20px);
+        height: 230px;
+        padding: 30px;
+
+        &::after {
+            content: '';
+            background-color: #000;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: .5;
+        }
+
+        @include md-min {
+            padding: 50px;
+            justify-content: flex-start;
+        }
+
+        @include lg-min {
+            padding-left: 70px;
+        }
+    }
+
+    &__banner-heading {
+
+        color: #fff;
+        font-size: 20px;
+        margin-bottom: 10px;
+
+        @include md-min {
+            font-size: 26px;
+        }
+
+        @include lg-min {
+            font-size: 40px;
+        }
+    }
+
+    &__banner-description {
+        color: #fff;
+        margin-bottom: 0;
+    }
+
+    &__banner-content {
+        position: relative;
+        z-index: 1;
+
+        @include lg-min {
+            width: 750px;
+        }
+    }
+
+    &__banner-image {
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+        border-radius: 10px;
+        position: absolute;
+        left: 0;
+
+        @include lg-min {}
+    }
+
+    &__container {}
+
+    &__item {
+        border-radius: 15px;
+        background-color: #f5f5f5;
+        padding: 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    &__item-btn {
+        margin-top: auto;
+    }
+
+    &__item-description {
+        font-size: 13px;
+        color: #666;
+    }
+
+    &__item-heading {
+        font-size: 16px;
+        //min-height: 40px;
+        line-height: 1.5;
+        margin-bottom: 10px;
+    }
+
+    &__item-logo {
+        height: 35px;
+        max-width: 100px;
+    }
+
+    &__item-logo-wrapper {
+        height: 80px;
+        display: flex;
+        align-items: center;
+    }
+
+    &__list {
+        display: grid;
+        gap: 15px;
+
+        @include sm-min {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include md-min {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @include lg-min {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+}
+
+// Trainers
+
+.trainers {
+    &__banner {
+        position: relative;
+        margin-bottom: 20px;
+        clip-path: rect(0 100% 100% 0 round 15px);
+        display: flex;
+        align-items: center;
+        height: 130px;
+
+        @include md-min {
+            align-items: center;
+            height: 140px;
+        }
+
+        &::after {
+            content: '';
+            background-color: #000;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: .5;
+        }
+    }
+
+    &__banner-content {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        z-index: 1;
+        text-align: left;
+        flex-grow: 1;
+        padding-top: 20px;
+    }
+
+    &__banner-heading {
+        margin-bottom: 10px;
+        color: #fff;
+        font-size: 23px;
+
+        @include md-min {
+            font-size: 26px;
+        }
+    }
+
+    &__banner-description {
+        color: #e6e6e6;
+        font-weight: 300;
+
+        @include md-min {
+            font-size: 16px;
+        }
+    }
+
+    &__banner-image {
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+        border-radius: 10px;
+        position: absolute;
+
+        @include lg-min {
+            height: 300px;
+        }
+    }
+}
+
+
+// Photo Gallery
+
+
+
+.photo-gallery {
+    &__body {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        height: 100%;
+
+        @include sm-min {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+    }
+
+    &__col1 {
+        padding: 20px;
+        background-color: #f5f5f5;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+
+        @include sm-min {
+            padding: 40px;
+        }
+
+        @include lg-min {
+            padding: 40px 50px;
+        }
+
+        .btn-wrapper {
+            margin-bottom: 0;
+        }
+    }
+
+    &__col2 {}
+
+    &__container {
+        display: grid;
+        gap: 20px;
+
+        @include md-min {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    &__description {
+        // margin-bottom: 0;
+    }
+
+    &__heading {}
+
+    &__item {}
+
+    &__thumb {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+// Video
+.video-container {
+    width: 100%;
+    height: 360px;
+
+    @include md-min {
+        height: 330px;
+    }
+
+    @include lg-min {
+        height: 480px;
+    }
+
+    .video-player {
+        object-fit: cover;
+    }
+}
+
+// New Batches
+
+.new-batches {
+    &__container {
+        @include xl-min {
+            display: grid;
+            grid-template-columns: 420px 1fr;
+            gap: 20px;
+        }
+    }
+
+    &__col1 {
+        display: none;
+
+        @include xl-min {
+            display: flex;
+        }
+    }
+
+    &__image {
+        display: none;
+
+        @include md-min {
+            border-radius: 15px;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+    }
+
+    &__col2 {
+        background-color: #ECEEF5;
+        border-radius: 20px;
+        padding: 25px;
+
+        @include lg-min {
+            padding: 50px 40px 40px 40px;
+        }
+    }
+
+    &__course {
+        font-weight: 700;
+    }
+
+    &__heading {
+        text-align: center;
+        font-weight: 500;
+        color: #777;
+        margin-bottom: 20px;
+        font-size: 18px;
+
+        @include md-min {
+            font-size: 21px;
+        }
+    }
+
+}
+
+// Testimonials 
+
+
+.splide {
+    &__list {}
+
+    &__slide {}
+
+    &__track {}
+}
+
+.testimonials {
+    &__container {}
+
+    &__heading {}
+}
+
+// Blogs List
+
+.blogs-list {
+    &__container {}
+
+    &__content {
+        background-color: #f1f1f1;
+        padding: 20px;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+
+        @include lg-min {
+            padding: 30px;
+        }
+    }
+
+    &__heading {
+        text-align: center;
+
+        @include lg-min {
+            margin-bottom: 40px;
+        }
+    }
+
+    &__item {
+        display: grid;
+        grid-template-rows: 170px auto;
+        height: 100%;
+    }
+
+    &__item-heading {}
+
+    &__item-description {
+        margin-bottom: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        /* number of lines to show */
+        line-clamp: 4;
+        -webkit-box-orient: vertical;
+    }
+
+    &__item-image {
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        object-fit: cover;
+        width: 100%;
+
+        @include sm-min {
+            height: 100%;
+        }
+    }
+
+    &__wrapper {
+        display: grid;
+        gap: 15px;
+
+        @include sm-min {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include md-min {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+    }
+}
+
+
+// Benefits Of Certifications: Start
+
+.benefits-of-certifications {
+    &__container {}
+
+    &__heading {}
+
+    &__description {}
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+
+        @include md-min {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+    }
+
+    &__list-item {
+        background-color: #f1f1f1;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        height: 150px;
+    }
+
+    &__list-icon {
+        background: #8BBCDD;
+        border: none;
+        width: 0.8rem;
+        height: 0.8rem;
+        padding: 0.8rem;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 0.313rem;
+        position: relative;
+        border-radius: 100%;
+
+        &::after {
+            content: "";
+            border-color: white;
+            height: 0.32rem;
+            background-color: transparent;
+            border: solid #fff;
+            border-width: 0 2px 2px 0;
+            display: inline-block;
+            padding: 3px;
+            top: 0;
+            position: absolute;
+            bottom: 0.25rem;
+            margin: auto;
+            transform: rotate(40deg);
+        }
+    }
+
+    &__list-text {
+        margin-bottom: 0;
+
+        @include md-min {
+            width: 70%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+
+// Benefits Of Certifications: End
+
+
+/* Why Choose Us: Start */
+.why-choose-us {
+    &__container {}
+
+    &__heading {}
+
+    &__description {}
+
+    &__list {
+        display: grid;
+        // grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+
+        @include sm-min {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        @include md-min {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        @include lg-min {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+    }
+
+    &__list-item {
+        background-color: #f1f1f1;
+        padding: 15px;
+        border-radius: 10px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+
+    &__list-item-heading {
+        margin-bottom: 5px;
+        font-size: 14px;
+    }
+
+    &__list-icon {
+        background: #8BBCDD;
+        border: none;
+        width: 0.8rem;
+        height: 0.8rem;
+        padding: 0.8rem;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 0.313rem;
+        position: relative;
+        border-radius: 100%;
+        margin-bottom: 10px;
+
+        &::after {
+            content: "";
+            border-color: white;
+            height: 0.32rem;
+            background-color: transparent;
+            border: solid #fff;
+            border-width: 0 2px 2px 0;
+            display: inline-block;
+            padding: 3px;
+            top: 0;
+            position: absolute;
+            bottom: 0.25rem;
+            margin: auto;
+            transform: rotate(40deg);
+        }
+    }
+
+    &__list-text {
+        margin-bottom: 0;
+
+        @include md-min {
+            width: 70%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+
+/* Why Choose Us: End */

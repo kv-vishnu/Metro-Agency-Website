@@ -1,0 +1,207 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/functions' as *;
+@use '../abstracts/mixins' as *;
+
+/* Web Font: Start */
+/* thin */
+@font-face {
+    font-family: 'poppins';
+    src: url('../fonts/poppins-thin.woff2') format('woff2'),
+        url('../fonts/poppins-thin.woff') format('woff');
+    font-weight: 100;
+    font-display: swap;
+}
+
+/* extralight */
+@font-face {
+    font-family: 'poppins';
+    src: url('../fonts/poppins-extralight.woff2') format('woff2'),
+        url('../fonts/poppins-extralight.woff') format('woff');
+    font-weight: 200;
+    font-display: swap;
+}
+
+/* light */
+@font-face {
+    font-family: 'poppins';
+    src: url('../fonts/poppins-light.woff2') format('woff2'),
+        url('../fonts/poppins-light.woff') format('woff');
+    font-weight: 300;
+    font-display: swap;
+}
+
+/* regular */
+@font-face {
+    font-family: 'poppins';
+    src: url('../fonts/poppins-regular.woff2') format('woff2'),
+        url('../fonts/poppins-regular.woff') format('woff');
+    font-weight: 400;
+    font-display: swap;
+}
+
+/* medium */
+@font-face {
+    font-family: 'poppins';
+    src: url('../fonts/poppins-medium.woff2') format('woff2'),
+        url('../fonts/poppins-medium.woff') format('woff');
+    font-weight: 500;
+    font-display: swap;
+}
+
+/* semibold */
+@font-face {
+    font-family: 'poppins';
+    src: url('../fonts/poppins-semibold.woff2') format('woff2'),
+        url('../fonts/poppins-semibold.woff') format('woff');
+    font-weight: 600;
+    font-display: swap;
+}
+
+/* bold */
+@font-face {
+    font-family: 'poppins';
+    src: url('../fonts/poppins-bold.woff2') format('woff2'),
+        url('../fonts/poppins-bold.woff') format('woff');
+    font-weight: 700;
+    font-display: swap;
+}
+
+/* extrabold */
+@font-face {
+    font-family: 'poppins';
+    src: url('../fonts/poppins-extrabold.woff2') format('woff2'),
+        url('../fonts/poppins-extrabold.woff') format('woff');
+    font-weight: 800;
+    font-display: swap;
+}
+
+/* black */
+@font-face {
+    font-family: 'poppins';
+    src: url('../fonts/poppins-black.woff2') format('woff2'),
+        url('../fonts/poppins-black.woff') format('woff');
+    font-weight: 900;
+    font-display: swap;
+}
+
+/* Web Font: End */
+
+h1 {
+    font-size: 2.6rem;
+}
+
+/* Adjust as needed */
+h2 {
+    font-size: 17px;
+    margin-bottom: 20px;
+    line-height: 24px;
+    font-weight: 600;
+    color: #666;
+
+    @include xl-min {
+        margin-bottom: 20px;
+        font-size: 21px;
+    }
+}
+
+h3 {
+    font-size: 1rem;
+    margin-bottom: rem(10);
+    color: #666;
+    font-weight: 600;
+
+    @include xl-min {
+        margin-bottom: rem(20);
+        font-size: 15px;
+    }
+}
+
+h4 {
+    font-size: 0.875rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+h5 {
+    font-size: 0.75rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+h6 {
+    font-size: 0.625rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+
+p {
+    margin-bottom: rem(20);
+    line-height: 20px;
+    letter-spacing: .5px;
+    font-size: 14px;
+    color: #777;
+
+    // font-size: 1rem;
+    // &:last-child {
+    //     margin-bottom: 0;
+    // }
+
+}
+
+
+
+// heading with colors
+
+
+
+.heading1 {
+    font-size: 1.25rem;
+    color: white;
+
+    &__second-color {
+        color: $brand-color2;
+    }
+}
+
+// .heading2 {
+//     font-size: 1.25rem;
+//     color: $brand-color1;
+
+//     &__second-color {
+//         color: $brand-color2;
+//     }
+
+//     @include md-min {
+//         font-size: rem(20);
+//     }
+
+//     @include xl-min {
+//         font-size: rem(24);
+//     }
+
+//     &__color1 {
+//         color: $brand-color1;
+//     }
+
+//     &__color2 {
+//         color: $brand-color2;
+//     }
+// }
+
+.heading-with-two-color {
+    color: $brand-color1;
+
+    &__second-color {
+        color: $brand-color2;
+    }
+}
+
+/* Text Truncator: Start */
+@mixin text-truncator($line-height, $maxlines) {
+    line-height: $line-height;
+    max-height: $line-height * $maxlines * 1rem;
+    overflow-y: hidden;
+}
+
+/* Text Truncator: End */

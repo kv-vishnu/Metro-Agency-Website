@@ -1,0 +1,170 @@
+// abstracts
+@use '../abstracts/mixins' as *;
+
+//vendor
+@use '../vendors/tabs' as *;
+
+
+
+
+
+// benefits-job-faq
+
+.benefits-job-faq-tabs__data {
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    position: relative;
+}
+
+/* Desktop (992px and above) */
+@media (min-width: 992px) {
+    .benefits-job-faq-tabs__data.collapsed {
+        max-height: 75px;
+    }
+
+    .benefits-job-faq-tabs__data::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 60px;
+        width: 100%;
+        // background: linear-gradient(to bottom, rgba(255, 255, 255, 0), white);
+        display: block;
+        pointer-events: none;
+    }
+}
+
+/* Mobile (below 992px) */
+@media (max-width: 991px) {
+    .benefits-job-faq-tabs__data.collapsed {
+        max-height: 0;
+    }
+}
+
+.toggle-button {
+    display: inline-block;
+    margin-top: 10px;
+    cursor: pointer;
+    background: #0073e6;
+    color: #fff;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+}
+
+.toggle-button {
+    position: relative;
+    background: #cdcdcd;
+    color: #333;
+    border: none;
+    cursor: pointer;
+    height: 40px;
+    font-family: inherit;
+    border-radius: 30px;
+    padding-left: 25px;
+    padding-right: 35px;
+    font-weight: 600;
+}
+
+/* '+' symbol before Read More */
+.toggle-button::after {
+    content: "+";
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    font-weight: 300;
+    font-size: 20px;
+    font-family: inherit;
+}
+
+/* '-' symbol before Read Less */
+.toggle-button.active::after {
+    content: '−';
+    /* Unicode minus */
+}
+
+
+.benefits-job-faq {
+    &-tabs {
+        &__nav {
+            overflow-x: scroll;
+
+            @include sm-min {
+                overflow-x: initial;
+            }
+        }
+
+        &__nav-li-a {
+            font-weight: 600;
+            line-height: 1;
+            white-space: nowrap;
+            font-size: 14px;
+
+            @include md-min {
+                padding-left: 30px;
+                padding-right: 30px;
+                font-size: 15px;
+            }
+        }
+
+        &__content {
+
+            .tabs__pane {
+                padding: 20px;
+
+                @include md-min {
+                    padding: 30px;
+                }
+
+                h3 {
+                    font-size: 14px;
+                    margin-bottom: 10px;
+                    font-weight: 600;
+                }
+
+                h4 {
+                    font-size: 12px;
+                    font-weight: 600;
+                    margin-bottom: 3px;
+
+                    @include md-min {
+                        font-size: 13px;
+                    }
+                }
+
+                ul {
+                    list-style: disc;
+                    list-style-position: outside;
+                    margin-left: 18px;
+                    margin-bottom: 20px;
+
+                    li {
+                        font-weight: 300;
+                        font-size: 13px;
+
+                        &::marker {
+                            width: 5px;
+                            height: 5px;
+                            font-size: 20px;
+                            color: #999;
+                            line-height: .70;
+                        }
+                    }
+                }
+            }
+
+            .tabs__pane.active {
+                padding: 20px;
+
+                @include md-min {
+                    padding: 30px;
+                }
+            }
+        }
+
+
+    }
+}

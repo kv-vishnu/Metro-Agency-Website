@@ -1,0 +1,53 @@
+// Abstracts
+@use '../sass/base/reset' as *;
+@use '../sass/base/typography' as *;
+@use '../sass/abstracts/mixins' as *;
+
+// Components
+@use 'components/forms' as *;
+@use 'components/move-to-top' as *;
+
+
+// Layout
+@use '../sass/layouts/containers' as *;
+@use '../sass/layouts/buttons' as *;
+@use '../sass/layouts/helpers' as *;
+@use '../sass/layouts/form1' as *;
+
+
+.enquiry {
+    &__container {
+        @include lg-min {
+            width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    &-header {
+        &__logo {
+            margin-bottom: 20px;
+        }
+
+        &__heading {
+            font-size: 17px;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        &__description {}
+    }
+
+    &-form {
+
+        &__body {
+            padding: 0;
+        }
+
+        &__mobile-number {
+            display: grid;
+            grid-template-columns: 50px 1fr;
+            gap: 10px;
+        }
+    }
+}

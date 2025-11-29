@@ -1,0 +1,400 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/functions' as *;
+@use '../abstracts/variables' as *;
+@use 'sass:map';
+
+/* Main Containers: Start */
+
+.container {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+
+    @include md-min {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    @include xl-min {
+        width: 1170px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    @include xxl-min {
+        width: 1200px;
+    }
+}
+
+/* Main Containers: End */
+
+/* Helper Containers: Start */
+
+.content-wrapper-white-sm-padding {
+    background-color: #fff;
+    padding: rem(15);
+    border: 1px solid $light-border;
+    border-radius: rem(7);
+
+    @include xl-min {
+        border-radius: rem(10);
+        padding: rem(20);
+    }
+}
+
+.content-wrapper-white-md-padding {
+    background-color: #fff;
+    padding: rem(15);
+    border: 1px solid $light-border;
+    border-radius: rem(7);
+
+    @include xl-min {
+        border-radius: rem(10);
+        padding: rem(30);
+    }
+}
+
+.content-wrapper-white-lg-padding {
+    background-color: #fff;
+    padding: rem(20);
+    border: 1px solid #efefef;
+    border-radius: rem(7);
+
+    @include xl-min {
+        border-radius: rem(10);
+        padding: rem(40);
+    }
+}
+
+.content-wrapper-white-xl-padding {
+    background-color: #fff;
+    padding: rem(20);
+    border: 1px solid #efefef;
+    border-radius: rem(7);
+
+    @include xl-min {
+        border-radius: rem(10);
+        padding: rem(50);
+    }
+}
+
+.container-light-sm-padding {
+    padding: rem(15);
+    border-radius: rem(10);
+    @include light-bg-with-border;
+
+    @include xl-min {
+        padding: rem(20);
+    }
+}
+
+.container-light-md-padding {
+    padding: rem(20);
+    border-radius: rem(10);
+    @include light-bg-with-border;
+
+    @include xl-min {
+        padding: rem(30);
+    }
+}
+
+.container-light-lg-padding {
+    padding: rem(30);
+    border-radius: rem(10);
+    @include light-bg-with-border;
+
+    @include xl-min {
+        padding: rem(50);
+    }
+}
+
+/* Helper Containers: End */
+
+/* Content Section: Start */
+
+.content-section {
+    &__header {
+        margin-bottom: rem(20);
+
+        @include xl-min {
+            margin-bottom: rem(35);
+        }
+
+        &-title {
+            font-size: rem(24);
+            line-height: 1.25;
+            margin-bottom: rem(10);
+
+            @include xl-min {
+                font-size: rem(26);
+            }
+        }
+
+        &-description {}
+    }
+}
+
+/* Content Section: End */
+
+
+/* Content Section Top & Bottom Padding: Start */
+
+.content-section {
+    // border: 1px solid green;
+    padding-top: map.get($content-section-t-b-p, $key: 'xs');
+    padding-bottom: map.get($content-section-t-b-p, $key: 'xs');
+
+    @include sm-min {
+        padding-top: map.get($map: $content-section-t-b-p, $key: 'sm');
+        padding-bottom: map.get($map: $content-section-t-b-p, $key: 'sm');
+    }
+
+    @include md-min {
+        padding-top: map.get($map: $content-section-t-b-p, $key: 'md');
+        padding-bottom: map.get($map: $content-section-t-b-p, $key: 'md');
+    }
+
+    @include lg-min {
+        padding-top: map.get($map: $content-section-t-b-p, $key: 'lg');
+        padding-bottom: map.get($map: $content-section-t-b-p, $key: 'lg');
+    }
+
+    @include xl-min {
+        padding-top: map.get($map: $content-section-t-b-p, $key: 'xl');
+        padding-bottom: map.get($map: $content-section-t-b-p, $key: 'xl');
+    }
+}
+
+/* Content Section Top & Bottom Padding: End */
+
+/* Content Section Padding Top Half: Start */
+
+.content-section-p-t-h {
+    // border: 1px solid green;
+    padding-top: calc(map.get($content-section-t-b-p, 'xs')/2);
+
+    @include sm-min {
+        padding-top: calc(map.get($map: $content-section-t-b-p, $key: 'sm')/2);
+    }
+
+    @include md-min {
+        padding-top: calc(map.get($map: $content-section-t-b-p, $key: 'md')/2);
+    }
+
+    @include lg-min {
+        padding-top: calc(map.get($map: $content-section-t-b-p, $key: 'lg')/2);
+    }
+
+    @include xl-min {
+        padding-top: calc(map.get($map: $content-section-t-b-p, $key: 'xl')/2);
+    }
+}
+
+/* Content Section Padding Top Half: End */
+
+/* Content Section Padding Bottom Half: Start */
+
+.content-section-p-b-h {
+    padding-bottom: calc(map.get($content-section-t-b-p, 'xs')/2);
+
+    @include sm-min {
+        padding-bottom: calc(map.get($map: $content-section-t-b-p, $key: 'sm')/2);
+    }
+
+    @include md-min {
+        padding-bottom: calc(map.get($map: $content-section-t-b-p, $key: 'md')/2);
+    }
+
+    @include lg-min {
+        padding-bottom: calc(map.get($map: $content-section-t-b-p, $key: 'lg')/2);
+    }
+
+    @include xl-min {
+        padding-bottom: calc(map.get($map: $content-section-t-b-p, $key: 'xl')/2);
+    }
+}
+
+/* Content Section Padding Bottom Half: End */
+
+/* Content Section Padding Top & Bottom Half: Start */
+
+.content-section-p-t-b-h {
+    padding-top: map.get($content-section-t-b-p, 'xs');
+    padding-bottom: map.get($content-section-t-b-p, 'xs');
+
+    @include sm-min {
+        padding-top: calc(map.get($map: $content-section-t-b-p, $key: 'sm')/2);
+        padding-bottom: calc(map.get($map: $content-section-t-b-p, $key: 'sm')/2);
+    }
+
+    @include md-min {
+        padding-top: calc(map.get($map: $content-section-t-b-p, $key: 'md')/2);
+        padding-bottom: calc(map.get($map: $content-section-t-b-p, $key: 'md')/2);
+    }
+
+    @include lg-min {
+        padding-top: calc(map.get($map: $content-section-t-b-p, $key: 'lg')/2);
+        padding-bottom: calc(map.get($map: $content-section-t-b-p, $key: 'lg')/2);
+    }
+
+    @include xl-min {
+        padding-top: calc(map.get($map: $content-section-t-b-p, $key: 'xl')/2);
+        padding-bottom: calc(map.get($map: $content-section-t-b-p, $key: 'xl')/2);
+    }
+}
+
+/* Content Section Padding Top & Bottom Half: End */
+
+/* Content Section Padding Top None: Start */
+
+.content-section-p-t-n {
+    padding-top: 0;
+}
+
+/* Content Section Padding Top None: End */
+
+/* Content Section Padding Bottom None: Start */
+.content-section-p-b-n {
+    padding-bottom: 0;
+}
+
+/* Content Section Padding Bottom None: End */
+
+/* Content Section Padding Top & Bottom None: Start */
+
+.content-section-p-t-b-n {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+/* Content Section Padding Top & Bottom None: End */
+
+.double-column-layout {
+    display: grid;
+    gap: 1.25rem;
+
+    @include xl-min {
+        grid-template-columns: 50.625rem 1fr;
+        gap: 1.875rem;
+    }
+
+    &__col1 {
+        display: grid;
+        gap: rem(30);
+
+        @include xl-min {
+            gap: rem(40);
+        }
+    }
+}
+
+
+.site-content {
+    position: relative;
+    padding-top: 50px;
+    margin-bottom: 15px;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.site-content::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Edge */
+}
+
+/* Sidebar Content Box: Start */
+
+.sidebar-content-box {
+    &__heading {
+        font-size: rem(18);
+
+        @include xl-min {
+            font-size: rem(21);
+        }
+    }
+
+    p {
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+/* Sidebar Content Box: End */
+
+
+/* Random Text Contents: Start */
+.random-contents {
+    h3 {
+        margin-bottom: rem(15);
+    }
+
+    ul {
+        margin-bottom: 15px;
+
+        @include md-min {
+            margin-bottom: 20px;
+        }
+
+        // list-style: disc;
+        li {
+            position: relative;
+            padding-left: 15px;
+            font-size: 14px;
+            line-height: 19px;
+            margin-bottom: 5px;
+
+            &::before {
+                content: "";
+                width: 0px;
+                height: 0px;
+                border-top: 4px solid transparent;
+                border-bottom: 4px solid transparent;
+                border-left: 4px solid #777;
+                position: absolute;
+                margin-left: 0;
+                left: 0;
+                top: 2px;
+            }
+
+            ul {
+                li {
+                    &::before {
+                        content: "";
+                        width: 4px;
+                        height: 4px;
+                        position: absolute;
+                        margin-left: 0;
+                        left: 0;
+                        top: 4px;
+                        border-radius: 5px;
+                        background: none;
+                        border: 1px solid #777;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+/* Random Text Contents: End */
+
+
+/* Two Column Section: Start */
+.two-column-container {
+    @include lg-min {
+        display: grid;
+        grid-template-columns: 65% 1fr;
+        gap: 45px;
+    }
+
+    &__col1 {}
+
+    &__col2 {}
+}
+
+/* Two Column Section: End */

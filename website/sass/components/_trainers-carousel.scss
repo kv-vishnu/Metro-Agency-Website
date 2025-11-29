@@ -1,0 +1,347 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/functions' as *;
+@use '../vendors/splide' as *;
+
+.trainers {
+    &__banner {
+        position: relative;
+        margin-bottom: 20px;
+        clip-path: rect(0 100% 100% 0 round 15px);
+        display: flex;
+        align-items: center;
+        height: 130px;
+
+        @include md-min {
+            align-items: center;
+            height: 140px;
+        }
+
+        &::after {
+            content: '';
+            background-color: #000;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: .5;
+        }
+    }
+
+    &__banner-heading {
+        margin-bottom: 10px;
+        color: #fff;
+        font-size: 23px;
+
+        @include md-min {
+            font-size: 26px;
+        }
+    }
+
+    &__banner-image {
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+        border-radius: 10px;
+        position: absolute;
+
+        @include lg-min {
+            height: 300px;
+        }
+    }
+
+    &__banner-content {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        z-index: 1;
+        text-align: left;
+        flex-grow: 1;
+        padding-top: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+
+        @include lg-min {
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+    }
+
+    &__banner-description {
+        color: #e6e6e6;
+        font-weight: 300;
+
+        @include md-min {
+            font-size: 16px;
+        }
+    }
+
+    &__carousel {
+        background-color: #fff;
+    }
+
+    &__container {}
+
+    &__data {
+        background-color: #ECEEF5;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        border-radius: 10px;
+        padding: 10px;
+
+        @include md-min {
+            padding: 35px 35px 35px 45px;
+            border-radius: 15px;
+            gap: 20px;
+            height: auto;
+        }
+    }
+
+    &__designation {
+        margin-bottom: 0;
+        font-size: 10px;
+        font-weight: 500;
+
+        @include md-min {
+            font-size: 12px;
+            margin-bottom: 3px;
+        }
+    }
+
+    &__details {
+        text-align: left;
+    }
+
+    &__heading {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    &__modules {
+        margin-bottom: 0;
+        font-size: 10px;
+        line-height: 1.2;
+        color: #666;
+
+        @include md-min {
+            font-size: 10px;
+        }
+
+        @include md-min {
+            font-size: 11px;
+        }
+    }
+
+    &__name {
+        margin-bottom: 0;
+        font-weight: 600;
+        font-size: 14px;
+        color: #555;
+
+        @include md-min {
+            font-size: 14px;
+        }
+    }
+
+    &__photo {
+        border-radius: 7px;
+        filter: grayscale(.25);
+        width: 140px;
+        height: 160px;
+        object-fit: cover;
+
+        @include md-min {
+            width: 200px;
+            height: 200px;
+        }
+    }
+
+    .splide__pagination {
+        position: relative;
+        background-color: transparent !important;
+
+        li {
+            button {
+                width: 12px;
+                height: 12px;
+                background-color: #e0e0e0;
+
+                &.is-active {
+                    background-color: #a8c5d9;
+                }
+            }
+        }
+    }
+}
+
+
+// Animation1
+
+// @keyframes pulseIn {
+//     0% {
+//         opacity: 0;
+//         transform: scale(0.95);
+//     }
+
+//     50% {
+//         opacity: 1;
+//         transform: scale(1.05);
+//     }
+
+//     100% {
+//         opacity: 1;
+//         transform: scale(1);
+//     }
+// }
+
+// /* Animation Wrapper */
+// .trainers__banner-heading,
+// .trainers__banner-description {
+//     opacity: 0;
+//     animation: pulseIn 1.5s ease-in-out forwards;
+//     animation-iteration-count: infinite;
+// }
+
+// /* Delay for Description */
+// .trainers__banner-heading {
+//     animation-delay: 0s;
+//     animation-duration: 1.5s;
+//     animation-iteration-count: infinite;
+//     animation-direction: alternate;
+// }
+
+// .trainers__banner-description {
+//     animation-delay: 0.5s;
+//     animation-duration: 1.5s;
+//     animation-iteration-count: infinite;
+//     animation-direction: alternate;
+// }
+
+// Animation2
+/* Common styles */
+// .trainers__banner-heading,
+// .trainers__banner-description {
+//     font-family: monospace;
+//     white-space: nowrap;
+//     overflow: hidden;
+//     display: inline-block;
+//     border-right: 2px solid rgba(0, 0, 0, 0.75);
+//     /* cursor effect */
+//     box-sizing: border-box;
+// }
+
+// /* Heading Typewriter */
+// .trainers__banner-heading {
+//     width: 0;
+//     animation: typeHeading 4s steps(30, end) 1s infinite alternate;
+// }
+
+// /* Description Typewriter */
+// .trainers__banner-description {
+//     width: 0;
+//     animation: typeDescription 4s steps(25, end) 2s infinite alternate;
+// }
+
+// /* Keyframes */
+// @keyframes typeHeading {
+//     from {
+//         width: 0;
+//     }
+
+//     to {
+//         width: 31ch;
+//     }
+
+//     /* Adjust based on your actual text length */
+// }
+
+// @keyframes typeDescription {
+//     from {
+//         width: 0;
+//     }
+
+//     to {
+//         width: 24ch;
+//     }
+
+//     /* Adjust based on your actual text length */
+// }
+
+// Animation3
+/* Keyframes for bounce */
+// @keyframes bounce {
+
+//     0%,
+//     20%,
+//     50%,
+//     80%,
+//     100% {
+//         transform: translateY(0);
+//     }
+
+//     40% {
+//         transform: translateY(-15px);
+//     }
+
+//     60% {
+//         transform: translateY(-8px);
+//     }
+// }
+
+// /* Apply to heading */
+// .trainers__banner-heading {
+//     animation: bounce 2s infinite;
+//     display: inline-block;
+// }
+
+// /* Apply to description with delay */
+// .trainers__banner-description {
+//     animation: bounce 2s infinite;
+//     animation-delay: 1s;
+//     display: inline-block;
+// }
+
+// Animation4 
+
+@keyframes slideFadeUpInOut {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    10% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    70% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    80% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+}
+
+/* Apply to both elements at the same time */
+.trainers__banner-heading {
+    display: inline-block;
+    // animation: slideFadeUpInOut 5s ease-in-out infinite;
+    // animation-fill-mode: both;
+}
+
+.trainers__banner-description {
+    display: inline-block;
+    animation: slideFadeUpInOut 5s ease-in-out infinite;
+    animation-fill-mode: both;
+    animation-delay: 1s;
+}

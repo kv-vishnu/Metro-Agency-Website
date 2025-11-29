@@ -1,0 +1,142 @@
+@use '../abstracts/mixins' as *;
+
+.enquiry-section1 {
+    &__container {
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
+
+    &__wrapper {
+        position: relative;
+        width: 100%;
+
+        @include lg-min {
+            height: 310px;
+            display: flex;
+            align-items: flex-end;
+        }
+    }
+
+    &__bg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+        border-radius: 15px;
+    }
+
+    &__body {
+        width: 100%;
+        display: flex;
+        position: relative;
+        align-items: flex-end;
+        padding: 25px;
+        justify-content: center;
+
+        @include sm-min {
+            padding-left: 70px;
+            padding-right: 70px;
+            display: flex;
+            align-items: center;
+        }
+
+        @include lg-min {
+            padding: 0;
+            gap: 40px;
+        }
+    }
+
+    &__image-section {
+        display: none;
+
+        @include lg-min {
+            display: block;
+        }
+    }
+
+    &__image {
+        display: flex;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        @include sm-min {
+            flex-direction: row;
+        }
+
+        @include lg-min {
+            width: 520px;
+        }
+    }
+
+    &__content-col1 {
+        text-align: center;
+
+        @include sm-min {
+            text-align: right;
+            flex-basis: 65%;
+        }
+    }
+
+    &__heading {
+        font-size: 24px;
+        font-weight: 500;
+        margin-bottom: 10px;
+        color: #555;
+
+        @include sm-min {
+            text-align: left;
+        }
+
+        @include md-min {
+            font-size: 32px;
+            line-height: 32px;
+        }
+    }
+
+    &__description {
+        margin-bottom: 10px;
+        color: #555;
+
+        @include sm-min {
+            text-align: left;
+            margin-bottom: 0;
+        }
+
+        @include md-min {
+            font-size: 14px;
+        }
+    }
+
+    &__btn {
+        @include md-min {
+            height: 35px;
+        }
+    }
+
+    &__content-col2 {
+        text-align: center;
+
+        @include sm-min {
+            flex-basis: 35%;
+        }
+    }
+
+    &__qr-code {
+        padding: 5px;
+        background: white;
+        border-radius: 10px;
+
+        @include lg-min {
+            width: 155px;
+            height: auto;
+        }
+    }
+}

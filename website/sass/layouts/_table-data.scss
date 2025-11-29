@@ -1,0 +1,269 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/functions' as *;
+@use '../abstracts/mixins' as *;
+
+/* General styling for the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto;
+    max-width: 100%;
+
+    th,
+    td {
+        // padding: 10px;
+        text-align: left;
+        // border: 3px solid #f1f1f1;
+        // white-space: nowrap;
+        padding: 0.313rem 0.625rem 0.313rem 0.625rem;
+
+        &:first-child {
+            // border-left: 0.313rem solid #f1f1f1;
+        }
+
+        &:last-child {
+            // border-right: 0.313rem solid #f1f1f1;
+        }
+    }
+
+    /* Table heading styles */
+    th {
+        // background-color: #f1f1f1;
+        padding: 0.625rem 0.625rem 0.625rem 0.625rem;
+
+        &:first-child {
+            // border-top-left-radius: 0.625rem;
+        }
+
+    }
+
+    tbody {
+        tr {
+            td {
+                background: white;
+                border: 3px solid $light-bg;
+            }
+
+            &:first-child {
+                td {
+                    &:first-child {
+                        border-top-left-radius: 0.313rem;
+                    }
+
+                    &:last-child {
+                        border-top-right-radius: 0.313rem;
+                    }
+                }
+            }
+
+            &:last-child {
+                td {
+                    // border-bottom: 0.313rem solid #f1f1f1;
+                    // border-bottom: 0;
+                }
+
+                td {
+                    &:first-child {
+                        border-bottom-left-radius: 0.313rem;
+                    }
+
+                    &:last-child {
+                        border-bottom-right-radius: 0.313rem;
+                    }
+                }
+            }
+        }
+    }
+
+
+    /* Column widths using nth-child */
+    th:nth-child(1),
+    td:nth-child(1) {
+        /* width: 12.5%; */
+    }
+
+    th:nth-child(2),
+    td:nth-child(2) {
+        /* width: 12.5%; */
+    }
+
+    th:nth-child(3),
+    td:nth-child(3) {
+        /* width: 12.5%; */
+    }
+
+    th:nth-child(4),
+    td:nth-child(4) {
+        /* width: 12.5%; */
+    }
+
+    th:nth-child(5),
+    td:nth-child(5) {
+        /* width: 12.5%; */
+    }
+
+    th:nth-child(6),
+    td:nth-child(6) {
+        /* width: 12.5%; */
+    }
+
+    th:nth-child(6),
+    td:nth-child(6) {
+        /* width: 12.5%; */
+    }
+
+    th:nth-child(6),
+    td:nth-child(6) {
+        /* width: 12.5%; */
+    }
+
+    td {
+        ul {
+            white-space: normal;
+            margin-left: rem(15);
+            list-style: disc;
+
+            li {
+                line-height: 1.25;
+                margin-bottom: rem(5);
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+/* Table CSS Class: Start */
+
+.table-data-container {
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    margin-bottom: 10px;
+    /* Rounded corners for the table wrapper */
+    /* Ensures rounded corners are visible */
+    display: inline-block;
+    /* Ensure the wrapper is just as big as the table */
+    max-width: 100%;
+    background-color: $light-bg;
+    padding: .3rem;
+    border-radius: .5rem;
+    position: relative;
+
+    // @media only screen and (max-width:360px) {
+    //     max-width: rem(270);
+    // }
+
+    &::before {
+        // content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: white;
+        /* Matching the page background */
+        border-radius: 10px;
+        /* Rounded corners for the wrapper */
+        box-shadow: 0 0 0 1px black;
+        /* Thin black border */
+        z-index: -1;
+        /* Position the border behind the table */
+    }
+
+
+    /* Custom scrollbar styles */
+    &::-webkit-scrollbar {
+        height: 0.75rem;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #dedede;
+        border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #999;
+        border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+
+    @include xl-min {
+        overflow-x: initial;
+    }
+
+    .table-data {
+        width: 100%;
+        border-collapse: collapse;
+        /* Collapsed borders */
+        /* 1px border for the cells */
+        padding: .3rem;
+        border-radius: rem(10);
+        background-color: $light-bg;
+        margin-top: 0;
+
+
+
+        thead,
+        tbody {
+            tr {
+
+                th,
+                td {
+                    &:last-child {
+                        border-right: 0;
+                    }
+                }
+            }
+        }
+
+        th {
+            background-color: $light-bg;
+        }
+
+        th,
+        td {
+            border-right: 3px solid $light-bg;
+            /* 1px border around each cell */
+            padding: rem(10) rem(10);
+            text-align: left;
+            line-height: 1.25;
+            min-width: rem(100);
+        }
+
+    }
+}
+
+/* Table CSS Class: ENd */
+
+
+
+.table-star-rating {
+    display: flex;
+    gap: rem(7);
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include md-min {
+        flex-direction: row;
+    }
+}
+
+.table-container {
+    overflow-x: scroll;
+    max-height: 250px;
+}
+
+/* Table Data: End */

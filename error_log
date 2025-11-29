@@ -1,0 +1,2 @@
+[04-Dec-2024 13:52:27 UTC] PHP Fatal error:  Cannot redeclare Qrcodes::generateDiningQrCode() in /home1/qrexpdrg/public_html/codeigniter/application/controllers/admin/Qrcodes.php on line 110
+[15-Jul-2025 17:33:12 Asia/Kolkata] PHP Deprecated:  Optional parameter $subcategory_slug declared before required parameter $param3 is implicitly treated as a required parameter in /home1/qrexpdrg/public_html/emigo-website/application/controllers/Home.php on line 1199

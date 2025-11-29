@@ -1,0 +1,19 @@
+// Components
+import "./components/main-navigation.js";
+import "./components/featured-courses-carousel.js";
+import "./components/trainers-carousel.js";
+import "./components/new-batches-carousel.js";
+import "./components/photo-gallery.js";
+import "./components/course-list-rev1.js";
+import "./components/testimonials-carousel.js";
+import "./components/video-custom-player.js";
+import "./components/blogs-list-carousel.js";
+import "./components/benefits-job-faq.js";
+import "./components/forms.js";
+import "./components/modal.js";
+import "./components/copyright.js";
+import "./utilities/set-equal-heights.js"
+
+// Forms
+import "./forms/category/category-page-footer-enquiry.js"
+import "./forms/category/category-course-enquiry.js"

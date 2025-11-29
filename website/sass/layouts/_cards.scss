@@ -1,0 +1,34 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/functions' as *;
+
+.cards-layout1 {
+    display: grid;
+
+    @include md-min {
+        grid-template-columns: repeat(3, 1fr);
+        gap: rem(20);
+    }
+
+    &__card {
+        background: #f5f5f5;
+        border: 1px solid #e5e5e5;
+        border-radius: rem(7);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: rem(20);
+        min-height: rem(150);
+    }
+
+    h2,
+    &__heading {
+        font-weight: 600;
+        font-size: rem(18);
+    }
+
+    p,
+    &__sub-heading {
+        margin-bottom: 0;
+    }
+}

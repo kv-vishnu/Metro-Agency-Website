@@ -1,0 +1,104 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/functions' as *;
+
+// Subpage header: Start
+
+.subpage-header {
+    @include xl-min {
+        background: #f0f0f0;
+        padding-top: 0.625rem;
+
+        &::before {
+            content: " ";
+            position: absolute;
+            left: 0;
+            right: 0;
+            background: #f0f0f0;
+            height: 9.375rem;
+            top: -6.25rem;
+            z-index: -1;
+        }
+    }
+
+    &__container {
+        display: grid;
+        grid-gap: 0.938rem;
+
+        @include xl-min {
+            grid-template-columns: 1fr 820px;
+            grid-gap: 1.25rem;
+        }
+    }
+
+    &__page-title-container {
+        background: #fff;
+        border-radius: rem(15);
+        border: 1px solid #e7e7e7;
+
+        @include xl-min {
+            padding: rem(17);
+        }
+    }
+
+    &__page-title-wrapper {
+        padding: rem(20);
+
+        height: 100%;
+        border-radius: rem(10);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & {
+            @include light-bg-with-border;
+        }
+    }
+
+    &__page-title-name {
+        font-size: rem(20);
+        color: $brand-color1;
+        width: 80%;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+
+        &-color1 {
+            color: $brand-color2;
+        }
+
+        @include md-min {
+            font-size: rem(28);
+        }
+
+    }
+
+    &__picture {
+        position: relative;
+        border-radius: 10px;
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            z-index: 1;
+            opacity: 0.15;
+            border-radius: 10px;
+        }
+    }
+
+    &__image {
+        display: flex;
+        object-fit: cover;
+        width: 100%;
+        border-radius: 10px;
+    }
+}
+
+// Subpage header: End

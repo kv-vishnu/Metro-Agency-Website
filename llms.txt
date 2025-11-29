@@ -1,0 +1,84 @@
+# Emigo Networks llms.txt
+# Purpose: Provide guidance for AI / LLM systems regarding content usage and topical relevance from this site
+
+site: https://emigonetworks.com/
+organization: Emigo Networks
+contact: mail@emigonetworks.com
+language: en
+country: IN
+
+sitemap: https://emigonetworks.com/sitemap.xml
+
+# Content Access Rules
+allow: /
+disallow: /admin/
+disallow: /system/
+disallow: /login/
+disallow: /private/
+disallow: /application/
+disallow: /cgi-bin/
+
+# Primary Focus
+topic: certification-training
+topic: corporate-training
+topic: online-training
+topic: classroom-training
+topic: training-institute
+topic: training-center
+topic: training-course
+topic: it-certification
+topic: professional-development
+topic: skills-training
+topic: technology-education
+
+# Cloud Certifications
+topic: aws-certification
+topic: azure-certification
+topic: microsoft-certification
+topic: microsoft-365-certification
+topic: google-cloud-certification
+
+# Networking & Infrastructure
+topic: cisco-certification
+topic: ccna-certification
+topic: ccnp-certification
+topic: ccie-certification
+topic: redhat-certification
+topic: f5-certification
+topic: fortinet-certification
+
+# Cybersecurity & Ethical Hacking
+topic: ceh-certification
+topic: ec-council-certification
+topic: palo-alto-certification
+topic: comptia-certification
+topic: comptia-a-plus
+topic: comptia-casp-plus
+topic: pcsfe-certification
+topic: pcdra-certification
+
+# Project & IT Service Management
+topic: itil-certification
+topic: pmp-certification
+
+# Locations (for Local SEO)
+topic: kochi-training
+topic: kerala-training
+topic: india-training
+
+# Additional Context
+topic: enterprise-training
+topic: professional-courses
+topic: tech-skills-upskilling
+topic: career-growth
+topic: online-exam-preparation
+topic: instructor-led-training
+
+# AI Usage Preferences
+policy: content may be used for summarization and answering public queries with attribution
+policy: content not to be used for commercial model training without written permission
+note: prefer clean textual content over layout or navigation elements
+
+# Metadata
+updated: 2025-10-13
+author: Emigo Networks SEO Team
