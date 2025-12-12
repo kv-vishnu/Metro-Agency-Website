@@ -257,7 +257,7 @@ margin-bottom: 20px;
     left: 0;
     top: 2px; 
     font-size: 16px;
-    color: var(--accent-color); /* or green */
+    color: #e74c3c; /* or green */
         }
         
         .productdetails li i {
@@ -353,7 +353,7 @@ margin-bottom: 20px;
             color: var(--primary-color);
             padding: 15px 30px;
             border: 2px solid var(--primary-color);
-            border-radius: 30px;
+            border-radius: 10px;
             font-size: 1.1rem;
             font-weight: bold;
             cursor: pointer;
@@ -544,3 +544,9 @@ margin-bottom: 20px;
                 gap: 10px;
             }
         }
+
+        .form-control[readonly] {
+    background-color: #e9ecef;
+    opacity: 1;
+}
+     

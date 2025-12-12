@@ -295,7 +295,7 @@ $(document).ready(function () {
   });
 
   //#region Status Change
-  $(".is-active-checkbox").on("change", function () {
+  $(".is-active-infrastructure-checkbox").on("change", function () {
     var id = $(this).data("id");
     var is_active = $(this).is(":checked") ? 1 : 0;
     $.ajax({
@@ -310,7 +310,7 @@ $(document).ready(function () {
         $("#featuredMessage")
           .html(
             `
-            <div class="alert alert-success alert-dismissible fade show" role="alert">Category status updated.</div>
+            <div class="alert alert-success alert-dismissible fade show" role="alert"> status updated.</div>
           `
           )
           .show();

@@ -31,7 +31,7 @@ $(document).ready(function () {
   }) {
     const field = isFile ? $(fieldId)[0].files[0] : $.trim($(fieldId).val());
     const errorElement = $(errorId);
-    const saveButton = $("#save_category");
+    const saveButton = $("#save_manufacture");
     errorElement.text(""); // Clear previous error
     saveButton.removeClass("error-button");
 
@@ -73,11 +73,11 @@ $(document).ready(function () {
   }
 
   //Add category
-  $(document).on("click", "#save_category", function (e) {
+  $(document).on("click", "#save_manufacture", function (e) {
     e.preventDefault();
     const $btn = $(this);
     // Get form values
-    const banner_image = $("#category_image")[0].files[0];
+    const manufacture_image = $("#manufacture_image")[0].files[0];
 
     // Validate required fields using the utility function
     let valid = true;
@@ -110,14 +110,31 @@ $(document).ready(function () {
 
 
     valid &= validateField({
-      fieldId: "#category_title",
-      errorId: "#error_category_title",
-      message: "category title is required.",
+      fieldId: "#manufacture_title",
+      errorId: "#error_manufacture_title",
+      message: "manufacture title is required.",
     });
     valid &= validateField({
-      fieldId: "#category_text",
-      errorId: "#error_category_text",
-      message: "category text is required.",
+      fieldId: "#manufacture_category_id",
+      errorId: "#error_manufacture_category_id",
+      message: "manufacture category is required.",
+    });
+
+        valid &= validateField({
+      fieldId: "#manufacture_email",
+      errorId: "#error_manufacture_email",
+      message: "manufacture email is required.",
+    });
+
+        valid &= validateField({
+      fieldId: "#manufacture_phone",
+      errorId: "#error_manufacture_phone",
+      message: "manufacture phone is required.",
+    });
+        valid &= validateField({
+      fieldId: "#manufacture_address",
+      errorId: "#error_manufacture_address",
+      message: "manufacture address is required.",
     });
   
     // valid &= validateField({
@@ -128,16 +145,16 @@ $(document).ready(function () {
  
     //valid &= validateField({ fieldId: "#benefits_content", errorId: "#error_benefits_content", message: "Benefits is required." });
     valid &= validateField({
-      fieldId: "#category_image",
-      errorId: "#error_category_image",
-      message: "category image is required.",
+      fieldId: "#manufacture_image",
+      errorId: "#error_manufacture_image",
+      message: "manufacture image is required.",
       isFile: true,
       allowedExtensions: ["webp", "avif", "svg", "jpg", "jpeg", "png"],
     });
 
 
     if (!valid) {
-      $btn.prop("disabled", false).text("Save Category");
+      $btn.prop("disabled", false).text("Save Manufacture");
       return;
     } else {
       $btn.prop("disabled", true).text("Saving...");
@@ -151,14 +168,20 @@ $(document).ready(function () {
     formData.append("keywords", $("#keywords").val());
     formData.append("meta_description", $("#meta_description").val());
     formData.append("page_schema", $("#page_schema").val());
-    formData.append("category_title", $("#category_title").val());
-    formData.append("category_text", $("#category_text").val());
-    formData.append("category_image", banner_image);
+    formData.append("manufacture_title", $("#manufacture_title").val());
+$('input[name="manufacture_category_id[]"]:checked').each(function () {
+    formData.append("manufacture_category_id[]", $(this).val());
+});
+
+
+    // formData.append("manufacture_category_id", $("#manufacture_category_id[]").val());
+    formData.append("manufacture_email", $("#manufacture_email").val());
+    formData.append("manufacture_phone", $("#manufacture_phone").val());
+    formData.append("manufacture_address", $("#manufacture_address").val());
+    formData.append("manufacture_image", manufacture_image);
     // formData.append("category_link", $("#category_link").val());
 
-
-
-    const saveUrl = base_url + "admin/Categories/save";
+    const saveUrl = base_url + "admin/Manufacture/save";
 
     // Submit AJAX request
     $.ajax({
@@ -173,7 +196,7 @@ $(document).ready(function () {
           $("#categorySuccessMsg").text(response.message);
           setTimeout(() => {
             window.location.href =
-              base_url + "admin/Categories/";
+              base_url + "admin/Manufacture/";
             //location.reload();
           }, 2000);
         } else {
@@ -188,11 +211,11 @@ $(document).ready(function () {
   });
 
   //Update Category
-  $("#update_category").on("click", function (e) {
+  $("#update_manufacture").on("click", function (e) {
     e.preventDefault();
     const $btn = $(this);
     // Get form values
-    const banner_image = $("#category_edit_image")[0].files[0];
+    const manufacture_image = $("#manufacture_edit_image")[0].files[0];
 
     // Validate required fields using the utility function
     let valid = true;
@@ -219,23 +242,41 @@ $(document).ready(function () {
 
 
     valid &= validateField({
-      fieldId: "#category_edit_title",
-      errorId: "#error_category_edit_title",
-      message: "category title is required.",
+      fieldId: "#manufacture_edit_title",
+      errorId: "#error_manufacture_edit_title",
+      message: "manufacture title is required.",
     });
     valid &= validateField({
-      fieldId: "#category_edit_text",
-      errorId: "#error_category_edit_text",
-      message: "category text is required.",
+      fieldId: "#manufacture_edit_email",
+      errorId: "#error_manufacture_edit_email",
+      message: "manufacture email is required.",
+    });
+
+        valid &= validateField({
+      fieldId: "#manufacture_edit_category_id",
+      errorId: "#error_manufacture_edit_category_id",
+      message: "manufacture category is required.",
+    });
+
+    valid &= validateField({
+      fieldId: "#manufacture_edit_phone",
+      errorId: "#error_manufacture_edit_phone",
+      message: "manufacture phone is required.",
+    });
+
+    valid &= validateField({
+      fieldId: "#manufacture_edit_address",
+      errorId: "#error_manufacture_edit_address",
+      message: "manufacture address is required.",
     });
 
     
     //valid &= validateField({ fieldId: "#benefits_content", errorId: "#error_benefits_content", message: "Benefits is required." });
-    if (banner_image) {
+    if (manufacture_image) {
       valid &= validateField({
-        fieldId: "#category_edit_image",
-        errorId: "#error_category_edit_image",
-        message: "category image is required.",
+        fieldId: "#manufacture_edit_image",
+        errorId: "#error_manufacture_edit_image",
+        message: "manufacture image is required.",
         isFile: true,
        allowedExtensions: ["webp", "avif", "svg", "jpg", "jpeg", "png"]
       });
@@ -243,7 +284,7 @@ $(document).ready(function () {
 
 
     if (!valid) {
-      $btn.prop("disabled", false).text("Update Category");
+      $btn.prop("disabled", false).text("Update Manufacture");
       return;
     } else {
       $btn.prop("disabled", true).text("Updating...");
@@ -257,13 +298,19 @@ $(document).ready(function () {
     formData.append("keywords", $("#meta_keywords").val());
     formData.append("meta_description", $("#meta_description").val());
     formData.append("page_schema", $("#page_schema").val());
-    formData.append("category_title", $("#category_edit_title").val());
-    formData.append("category_text", $("#category_edit_text").val());
-    formData.append("category_edit_image", banner_image);
-    formData.append("old_category_image", $("#old_category_image").val());
-    // formData.append("status", $("#status").val());
+    formData.append("manufacture_title", $("#manufacture_edit_title").val());
+$('input[name="manufacture_edit_category_id[]"]:checked').each(function () {
+    formData.append("manufacture_edit_category_id[]", $(this).val());
+});
 
-    const saveUrl = base_url + "admin/Categories/update_category";
+
+    // formData.append("manufacture_category_id", $("#manufacture_category_id[]").val());
+    formData.append("manufacture_email", $("#manufacture_edit_email").val());
+    formData.append("manufacture_phone", $("#manufacture_edit_phone").val());
+    formData.append("manufacture_address", $("#manufacture_edit_address").val());
+    formData.append("manufacture_edit_image", manufacture_image);
+    formData.append("old_manufacture_image", $("#old_manufacture_image").val());
+    const saveUrl = base_url + "admin/Manufacture/update_manufacture";
 
     // Submit AJAX request
     $.ajax({
@@ -280,7 +327,7 @@ $(document).ready(function () {
           setTimeout(() => {
             $("#categorySuccessMsg").text("");
             window.location.href =
-              base_url + "admin/Categories/";
+              base_url + "admin/Manufacture/";
           }, 2000);
         } else {
           alert("error");
@@ -294,11 +341,11 @@ $(document).ready(function () {
   });
 
   //#region Status Change
-  $(".is-active-category-checkbox").on("change", function () {
+  $(".is-active-manufacture-checkbox").on("change", function () {
     var id = $(this).data("id");
     var is_active = $(this).is(":checked") ? 1 : 0;
     $.ajax({
-      url: base_url + "admin/categories/update_category_status",
+      url: base_url + "admin/Manufacture/update_manufacture_status",
       type: "POST",
       contentType: "application/json",
       data: JSON.stringify({
@@ -309,7 +356,7 @@ $(document).ready(function () {
         $("#featuredMessage")
           .html(
             `
-            <div class="alert alert-success alert-dismissible fade show" role="alert">Category status updated.</div>
+            <div class="alert alert-success alert-dismissible fade show" role="alert"> status updated.</div>
           `
           )
           .show();

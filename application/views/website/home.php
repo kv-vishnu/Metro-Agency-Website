@@ -1,5 +1,4 @@
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
     <!-- Hero Section with Slider -->
     <div class="hero " id="home" style="display:none;">
         <div class="slider">
@@ -29,7 +28,7 @@
                 <img src="<?= base_url('uploads/slider/'.$slide['image']) ?>" class="d-block w-100" alt="">
                 
                 <div class="carousel-caption carousel-captions d-block">
-                    <h5 class="text-center"><?= $slide['title'] ?></h5>
+                    <h5 class="text-center d-none d-md-block"><?= $slide['title'] ?></h5>
                 </div>
             </div>
         <?php $i++; endforeach; ?>
@@ -54,7 +53,7 @@
 
     <!-- About Section -->
 
-    <section id="about" class="section">
+<section id="about" class="section">
     <div class="container">
 
         <h2 class="section-title">
@@ -69,7 +68,7 @@
 
             <div class="about-text">
                <h3> <?= $aboutus[0]['banner_title'] ?? '' ?></h3>
-               <p> <?= $aboutus[0]['banner_description'] ?? '' ?></p>
+               <?= $aboutus[0]['banner_description'] ?? '' ?>
                            <div class="stats">
                         <div class="stat-item">
                             <div class="stat-number"><?= $aboutus[0]['project_completed'] ?? '' ?></div>
@@ -101,17 +100,17 @@
     <section class="products section" id="products">
     <div class="container">
 
-        <h2 class="section-title">Our Product Categories</h2>
+        <h2 class="section-title">Our Categories</h2>
 
-        <p class="section-description">
-            At Metro Agencies, we supply a wide variety of steel products...
+        <p class="section-description d-none">
+            At Metro Agencies, we supply a wide variety of steel products..
         </p>
 
         <div class="products-grid">
 
             <?php foreach($categories as $cat): ?>
 
-                <div class="product-card">
+                <div class="product-card product-item" data-category="<?= $cat['id'] ?>">
 
                     <div class="product-image">
                         <img src="<?= base_url("uploads/category/".$cat['category_image']) ?>" 
@@ -123,8 +122,8 @@
 
                         <p><?= $cat['category_description'] ?></p>
 
-                        <a href="<?= base_url("category/".$cat['slug']) ?>" class="read-more">
-                            Read More
+                        <a href="<?= base_url('product'); ?>" class="read-more">
+                            View More
                         </a>
                     </div>
 
@@ -138,26 +137,6 @@
 </section>
 
 
-    <!-- Gallery Section -->
-    <!-- <section id="gallery">
-        <div class="container">
-            <h2 class="section-title">Project Gallery</h2>
-            <div class="gallery-slider">
-                <div class="gallery-track" id="galleryTrack">
-                    <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=500')"></div>
-                    <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=500')"></div>
-                    <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=500')"></div>
-                    <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1545259741-2ea3ebf61fa3?w=500')"></div>
-                    <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=500')"></div>
-                    <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=500')"></div>
-                </div>
-            </div>
-            <div class="gallery-nav">
-                <button class="gallery-btn" onclick="moveGallery(-1)">← Previous</button>
-                <button class="gallery-btn" onclick="moveGallery(1)">Next →</button>
-            </div>
-        </div>
-    </section> -->
 
     <!-- Contact Section -->
     <section class="contact section" id="contact">
@@ -217,12 +196,12 @@
                         </div>
                         <div class="form-group">
                           <select name="product_name" class="form-select" id="product_name">
-                            <option value="select product">select product</option>
+                            <option value="">select product</option>
                             <?php foreach($products as $product):?>
                             <option value="<?php echo $product['product_name']; ?>"><?php echo $product['product_name']; ?></option>
                                 <?php endforeach; ?>
                           </select>
-                             <div class="error" id="error_subject" style="color:red;"></div>
+                             <div class="error" id="error_product_name" style="color:red;"></div>
                         </div>
                     </div>
                     <div class="form-group">
@@ -234,35 +213,6 @@
             </div>
         </div>
     </section>
-
-<!-- <script>
-document.addEventListener("DOMContentLoaded", function () {
- let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide');
-        const dots = document.querySelectorAll('.slider-dot');
-
-        function showSlide(n) {
-            slides.forEach(slide => slide.classList.remove('active'));
-            dots.forEach(dot => dot.classList.remove('active'));
-
-            currentSlide = (n + slides.length) % slides.length;
-            slides[currentSlide].classList.add('active');
-            dots[currentSlide].classList.add('active');
-        }
-
-        function nextSlide() {
-            showSlide(currentSlide + 1);
-        }
-
-        // Auto advance slides
-        setInterval(nextSlide, 5000);
-
-        // Dot navigation
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => showSlide(index));
-        });
-});
-</script> -->
 
 
 

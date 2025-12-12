@@ -11,7 +11,7 @@
                       </div>
                   </div>
                   <div class="row mb-3">
-                      <div class="col-12">
+                      <div class="col-12 d-none">
                           <form class="d-flex" action="<?= base_url('admin/search') ?>" method="post">
                               <input type="hidden" name="search_type" value="category">
                               <input class="form-control me-2" type="search" name="search_term"

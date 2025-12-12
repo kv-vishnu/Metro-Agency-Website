@@ -22,7 +22,7 @@
                       </div>
                   </div>
                   <div class="row mb-3">
-                      <div class="col-12">
+                      <div class="col-12 d-none">
                           <form class="d-flex" action="<?= base_url('admin/search') ?>" method="post">
                             <input type="hidden" name="search_type" value="page">
                               <input class="form-control me-2" type="search" name="search_term" placeholder="Search Page"
@@ -60,89 +60,17 @@
                                       </td>
                                       <td>
                                           <a target="_blank" href="<?= base_url($page['slug']); ?>" class="btn">View</a>
-                                          <a href="<?= base_url('admin/PageBuilder/edit/' . $page['page_id']); ?>"
-                                              class="btn">Edit</a>
+                                           <?php if ($page['page_id'] != 1): ?>
+            <a href="<?= base_url('admin/PageBuilder/edit/' . $page['page_id']); ?>" class="btn">Edit</a>
+        <?php endif; ?>
+                                          <!-- <a href="<?= base_url('admin/PageBuilder/edit/' . $page['page_id']); ?>"
+                                              class="btn">Edit</a> -->
                                           <!-- <a href="<?= base_url('admin/PageBuilder/delete/' . $page['page_id']); ?>"
                                               class="btn">Delete</a> -->
                                       </td>
                                   </tr>
                                   <?php endforeach; ?>
-                                  <?php foreach ($categories as $page) : ?>
-                                  <tr>
-                                      <td><?= $count++; ?></td>
-                                      <td><?= $page['name']; ?></td>
-                                      <td>Category</td>
-                                      <td>
-                                          <input type="checkbox" name="featured" class="is-active-checkbox"
-                                            data-id="<?= $page['id']; ?>"
-                                            <?= $page['is_active'] ? 'checked' : '' ?>>
-                                      </td>
-                                      <td>
-                                          <a target="_blank" href="<?= base_url('certification-training/'.$page['slug']); ?>" class="btn">View</a>
-                                          <a href="<?php echo base_url();?>admin/categories/edit/<?= $page['id']; ?>"
-                                              class="btn">Edit</a>
-
-                                      </td>
-                                  </tr>
-                                  <?php endforeach; ?>
-                                  <?php foreach ($subsubcategories as $page) : ?>
-                                  <tr>
-                                      <td><?= $count++; ?></td>
-                                      <td><?= $page['sub_sub_name']; ?></td>
-                                      <td>Sub Category (Level 2)</td>
-                                      <td>
-                                          <input type="checkbox" name="featured" class="is-active-checkbox"
-                                            data-id="<?= $page['id']; ?>"
-                                            <?= $page['is_active'] ? 'checked' : '' ?>>
-                                      </td>
-                                      <td>
-                                          <a target="_blank" href="<?= base_url('certification-training/'.$page['cat_slug'].'/'.$page['subcat_slug'].'/'.$page['sub_sub_slug']); ?>" class="btn">View</a>
-                                          <a href="<?php echo base_url();?>admin/subsubcategories/edit/<?= $page['sub_sub_id']; ?>"
-                                              class="btn">Edit</a>
-
-                                      </td>
-                                  </tr>
-                                  <?php endforeach; ?>
-                                  <?php foreach ($subcategories as $page) : ?>
-                                  <tr>
-                                      <td><?= $count++; ?></td>
-                                      <td><?= $page['level_name']; ?></td>
-                                      <td>Sub Category</td>
-                                      <td>
-                                          <input type="checkbox" name="featured" class="is-active-subsubcategory-checkbox"
-                                            data-id="<?= $page['id']; ?>"
-                                            <?= $page['is_active'] ? 'checked' : '' ?>>
-                                      </td>
-                                      <td>
-                                          <a target="_blank" href="<?= base_url('certification-training/'.$page['cat_slug'].'/'.$page['subcat_slug']); ?>" class="btn">View</a>
-                                          <a href="<?php echo base_url();?>admin/subcategories/edit/<?= $page['level_id']; ?>"
-                                              class="btn">Edit</a>
-
-                                      </td>
-                                  </tr>
-                                  <?php endforeach; ?>
-                                  <?php foreach ($courses as $page) :
-                                    $subcat_slug = !empty($page['subcat_slug']) ? $page['subcat_slug'] : '0';
-                                    ?>
-                                  <tr>
-                                      <td><?= $count++; ?></td>
-                                      <td><?= $page['course_name']; ?></td>
-                                      <td>Course</td>
-                                       <td>
-                                          <input type="checkbox" name="featured" class="is-active-course-checkbox"
-                                            data-id="<?= $page['id']; ?>"
-                                            <?= $page['is_active'] ? 'checked' : '' ?>>
-                                      </td>
-                                      <td>
-                                          <a target="_blank" href="<?= base_url('certification-training/'.$page['cat_slug'].'/'.$subcat_slug.'/'.$page['course_slug']); ?>" class="btn">View</a>
-                                          <a href="<?php echo base_url();?>admin/courses/edit/<?= $page['id']; ?>"
-                                              class="btn">Edit</a>
-                                        <a href="<?php echo base_url();?>admin/courses/delete/<?= $page['id']; ?>"
-                                              class="btn">Delete</a>
-
-                                      </td>
-                                  </tr>
-                                  <?php endforeach; ?>
+                                  
                               </tbody>
                           </table>
                       </div><!-- end col -->

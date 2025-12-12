@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <!-- test -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= !empty($page_title) ? $page_title : "Default Site Title"; ?></title>
-    <meta name="keywords" content="<?= $metakeywords ?? 'keywords' ?>">
-    <meta name="description" content="<?= $metadescription ?? 'description' ?>">
-    <meta property="og:title" content="<?= !empty($page_title) ? $page_title : "Default Site Title"; ?>">
-    <meta property="og:description" content="<?= $metadescription ?? 'description' ?>">
-    <link rel="canonical" href="<?= !empty($canonical) ? $canonical : "Default Site Title"; ?>">
+    <title><?= !empty($metatitle) ? $metatitle : ""; ?></title>
+
+<meta name="keywords" content="<?= !empty($metakeywords) ? $metakeywords : 'keywords'; ?>">
+<meta name="description" content="<?= !empty($metadescription) ? $metadescription : 'description'; ?>">
+
+<meta property="og:title" content="<?= !empty($page_title) ? $page_title : "Metro Agencies"; ?>">
+<meta property="og:description" content="<?= !empty($metadescription) ? $metadescription : 'description'; ?>">
+
+<link rel="canonical" href="<?= !empty($canonical) ? $canonical : base_url(uri_string()); ?>">
+
      <input type="hidden" id="base_url" value="<?php echo base_url(); ?>">
     <?php
     $host = $_SERVER['HTTP_HOST'];
     $uri  = $_SERVER['REQUEST_URI'];
-    //Landing
-    if($host == 'localhost.metro-website' && $current_page_slug==='landing'){
-        echo '<link href="' . base_url('website/css/landing.css') . '" type="text/css" rel="stylesheet" />';
-    }
-    if($host == 'emigonetworks.com' && $current_page_slug==='landing'){
-        echo '<link href="' . base_url('website/css/landing.css') . '" type="text/css" rel="stylesheet" />';
-    }
+    
    //Home
    if ($host == 'localhost' 
     && strpos($uri, '/codeigniter/metro-website') !== false
@@ -29,13 +28,13 @@
    echo '<link href="' . base_url('website/css/home.css') . '" rel="stylesheet"/>';
    }
 
-    if ($host == 'localhost' 
-    && strpos($uri, '/codeigniter/metro-website') !== false
-    && $current_page_slug === 'careers') 
-   {  
-   echo '<link href="' . base_url('website/css/home.css') . '" rel="stylesheet"/>';
-   }
+       if($host == 'metroagencies.in' && $current_page_slug==='home')
+{
+    echo '<link href="' . base_url('website/css/home.css') . '" rel="stylesheet"/>';
+}
 
+
+    // Career
        if ($host == 'localhost' 
     && strpos($uri, '/codeigniter/metro-website') !== false
     && $current_page_slug === 'careers') 
@@ -43,13 +42,12 @@
    echo '<link href="' . base_url('website/css/career.css') . '" rel="stylesheet"/>';
    }
 
-       if ($host == 'localhost' 
-    && strpos($uri, '/codeigniter/metro-website') !== false
-    && $current_page_slug === 'contact') 
-   {  
-   echo '<link href="' . base_url('website/css/home.css') . '" rel="stylesheet"/>';
-   }
+         if($host == 'metroagencies.in' && $current_page_slug==='careers'){
+    echo '<link href="' . base_url('website/css/career.css') . '" rel="stylesheet"/>';
+}
 
+
+// contact
     if ($host == 'localhost' 
     && strpos($uri, '/codeigniter/metro-website') !== false
     && $current_page_slug === 'contact') 
@@ -57,20 +55,25 @@
    echo '<link href="' . base_url('website/css/contact.css') . '" rel="stylesheet"/>';
    }
 
-          if ($host == 'localhost' 
-    && strpos($uri, '/codeigniter/metro-website') !== false
-    && $current_page_slug === 'about-us') 
-   {  
-   echo '<link href="' . base_url('website/css/home.css') . '" rel="stylesheet"/>';
-   }
+  if($host == 'metroagencies.in' && $current_page_slug==='contact'){
+    echo '<link href="' . base_url('website/css/contact.css') . '" rel="stylesheet"/>';
+}
 
 
+
+// about us
 if ($host == 'localhost' 
     && strpos($uri, '/codeigniter/metro-website') !== false
-    && $current_page_slug === 'about-us') 
+    && $current_page_slug === 'aboutus') 
    {  
    echo '<link href="' . base_url('website/css/about-us.css') . '" rel="stylesheet"/>';
    }
+
+
+if($host == 'metroagencies.in' && $current_page_slug==='aboutus'){
+    echo '<link href="' . base_url('website/css/about-us.css') . '" rel="stylesheet"/>';
+}
+
 
 
      if ($host == 'localhost' 
@@ -80,19 +83,24 @@ if ($host == 'localhost'
    echo '<link href="' . base_url('website/css/home.css') . '" rel="stylesheet"/>';
    }
 
+   if($host == 'metroagencies.in' && $current_page_slug==='productdetails')
+{
+    echo '<link href="' . base_url('website/css/home.css') . '" rel="stylesheet"/>';
+}
+
     if ($host == 'localhost' 
     && strpos($uri, '/codeigniter/metro-website') !== false
     && $current_page_slug === 'productdetails') 
    {  
    echo '<link href="' . base_url('website/css/productdetail.css') . '" rel="stylesheet"/>';
    }
+  
+   
+if($host == 'metroagencies.in' && $current_page_slug==='productdetails')
+{
+    echo '<link href="' . base_url('website/css/productdetail.css') . '" rel="stylesheet"/>';
+}
 
-   if ($host == 'localhost' 
-    && strpos($uri, '/codeigniter/metro-website') !== false
-    && $current_page_slug === 'manfacturingunits') 
-   {  
-   echo '<link href="' . base_url('website/css/home.css') . '" rel="stylesheet"/>';
-   }
 
       if ($host == 'localhost' 
     && strpos($uri, '/codeigniter/metro-website') !== false
@@ -101,13 +109,14 @@ if ($host == 'localhost'
    echo '<link href="' . base_url('website/css/manufacture.css') . '" rel="stylesheet"/>';
    }
 
+   if($host == 'metroagencies.in' && $current_page_slug==='manfacturingunits')
+{
+    echo '<link href="' . base_url('website/css/manufacture.css') . '" rel="stylesheet"/>';
+}
 
-     if ($host == 'localhost' 
-    && strpos($uri, '/codeigniter/metro-website') !== false
-    && $current_page_slug === 'infrastructure') 
-   {  
-   echo '<link href="' . base_url('website/css/home.css') . '" rel="stylesheet"/>';
-   }
+
+
+
 
         if ($host == 'localhost' 
     && strpos($uri, '/codeigniter/metro-website') !== false
@@ -116,14 +125,12 @@ if ($host == 'localhost'
    echo '<link href="' . base_url('website/css/infrastructure.css') . '" rel="stylesheet"/>';
    }
 
+if($host == 'metroagencies.in' && $current_page_slug==='infrastructure')
+{
+    echo '<link href="' . base_url('website/css/infrastructure.css') . '" rel="stylesheet"/>';
+}
 
-   
-          if ($host == 'localhost' 
-    && strpos($uri, '/codeigniter/metro-website') !== false
-    && $current_page_slug === 'product') 
-   {  
-   echo '<link href="' . base_url('website/css/home.css') . '" rel="stylesheet"/>';
-   }
+
 
 
 if ($host == 'localhost' 
@@ -132,10 +139,13 @@ if ($host == 'localhost'
    {  
    echo '<link href="' . base_url('website/css/product.css') . '" rel="stylesheet"/>';
    }
+
+   if($host == 'metroagencies.in' && $current_page_slug==='product')
+{
+    echo '<link href="' . base_url('website/css/product.css') . '" rel="stylesheet"/>';
+}
  
-    if($host == 'emigonetworks.com' && $current_page_slug==='home'){
-        echo '<link href="' . base_url('website/css/home.css') . '" type="text/css" rel="stylesheet" />';
-    }
+ 
 
     ?>
 
@@ -156,7 +166,7 @@ if ($host == 'localhost'
    <header>
   <nav class="navbar">
     <div class="logo">
-      <img src="<?php echo base_url('website/images/metro-logo.png'); ?>" width="100" alt="">
+      <img src="<?php echo base_url('website/images/metro-logo.png'); ?>"  alt="">
     </div>
 
     <button class="menu-toggle" id="mobile-menu">
@@ -179,7 +189,3 @@ if ($host == 'localhost'
 
 <body>
 
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T5FKZMK9"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->

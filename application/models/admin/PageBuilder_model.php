@@ -8,8 +8,10 @@ class PageBuilder_model extends CI_Model {
     }
 
 
-    public function getAllPagesList() {
+    public function getAllPagesList() 
+    {
         $this->db->where('is_active', 0);
+        $this->db->order_by('sort_order', 'ASC');
         return $this->db->get('pages')->result_array();
     }
 
@@ -17,6 +19,15 @@ class PageBuilder_model extends CI_Model {
         $this->db->where('is_active', 0);
         return $this->db->get('tbl_career')->result_array();
     }
+
+
+    public function getPageBySlug($slug)
+{
+    return $this->db
+        ->where('slug', $slug)
+        ->get('pages')
+        ->row_array();
+}
 
 
    
@@ -87,6 +98,10 @@ class PageBuilder_model extends CI_Model {
         return $this->db->get('product_category')->result_array();
     }
 
+     public function getManfacture() {
+        return $this->db->get('tbl_manufacture')->result_array();
+    }
+
         public function getInfrastructure() {
         return $this->db->get('tbl_infrastructure')->result_array();
     }
@@ -134,6 +149,11 @@ class PageBuilder_model extends CI_Model {
         return $this->db->get('tbl_settings')->result_array();
     }
 
+    public function getInfrastructureList() {
+        $this->db->where('is_active', 0);
+        return $this->db->get('tbl_infrastructure')->result_array();
+    }
+
     public function getContactus() {
         return $this->db->get('contact_us')->result_array();
     }
@@ -175,6 +195,11 @@ class PageBuilder_model extends CI_Model {
     public function getCategoryDetails($category_id)
     {
         return $this->db->where('id', $category_id)->get('product_category')->row_array();
+    }
+
+        public function getManufactureDetails($id)
+    {
+        return $this->db->where('id', $id)->get('tbl_manufacture')->row_array();
     }
 
         public function getInfrastructureDetails($id)
@@ -225,6 +250,29 @@ class PageBuilder_model extends CI_Model {
     } else {
         return false; // or null
     }
+}
+
+
+public function getManufactureproductsByIds($ids)
+{
+    $this->db->where_in('product_category', $ids);
+    $this->db->where('is_active', 0);
+    return $this->db->get('tbl_product')->result_array();
+}
+
+
+public function getInfrastructureByIds($ids)
+{
+    $this->db->where_in('infrastructure_category', $ids);
+    $this->db->where('is_active', 0);
+    return $this->db->get('tbl_infrastructure')->result_array();
+}
+
+public function getManufactureCategoryList($ids){
+    $this->db->where_in('id', $ids);
+     $this->db->where('is_active', 0);
+    return $this->db->get('product_category')->result_array();
+
 }
 
         public function getSettingsDetails($id)
@@ -316,6 +364,18 @@ public function updateCategoryStatus($id, $is_active)
     return $this->db->update('product_category', ['is_active' => $is_active]);
 }
 
+public function updateProductStatus($id, $is_active)
+{
+    $this->db->where('id', $id);
+    return $this->db->update('tbl_product', ['is_active' => $is_active]);
+}
+
+public function updateManufactureStatus($id, $is_active)
+{
+    $this->db->where('id', $id);
+    return $this->db->update('tbl_manufacture', ['is_active' => $is_active]);
+}
+
 public function updateInfrastructureStatus($id, $is_active)
 {
     $this->db->where('id', $id);
@@ -323,19 +383,41 @@ public function updateInfrastructureStatus($id, $is_active)
 }
 
 
-    public function search_category($search_term) {
+    public function search_product($search_term) {
+        $this->db->like('product_name', $search_term);
+        return $this->db->get('tbl_product')->result_array();
+    }
+
+    public function search_infrastructure($search_term) {
+        $this->db->like('infrastructure_title', $search_term);
+        return $this->db->get('tbl_infrastructure')->result_array();
+    }
+
+
+    public function search_manufacture($search_term) {
+        $this->db->like('manufacture_title', $search_term);
+        return $this->db->get('tbl_manufacture')->result_array();
+    }
+
+
+        public function search_category($search_term) {
         $this->db->like('category_title', $search_term);
         return $this->db->get('product_category')->result_array();
     }
 
     public function update_recruitment_status($status) {
-        $this->db->like('status', $status);
+        $this->db->like('status', $status); 
         return $this->db->get('tbl_recruitment')->result_array();
     }
 
     public function update_contact_status($status) {
         $this->db->like('status', $status);
         return $this->db->get('contact_us')->result_array();
+    }
+
+    public function getManufactureList() {
+        $this->db->where('is_active', 0);
+        return $this->db->get('tbl_manufacture')->result_array();
     }
 
 

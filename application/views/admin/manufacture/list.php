@@ -6,16 +6,16 @@
                   <div class="row">
                       <div class="col-12">
                           <div class="page-title">
-                              <h2>All Career</h2>
+                              <h2>All Manufacture</h2>
                           </div>
                       </div>
                   </div>
-                  <div class="row mb-3 d-none">
+                  <div class="row mb-3">
                       <div class="col-12">
-                          <form class="d-flex" action="<?= base_url('admin/search') ?>" method="post">
+                          <form class="d-flex" action="<?= base_url('admin/search/search_manufacture') ?>" method="post">
                               <input type="hidden" name="search_type" value="category">
                               <input class="form-control me-2" type="search" name="search_term"
-                                  placeholder="Search Settings" aria-label="Search">
+                                  placeholder="Search Manufacture" aria-label="Search">
                               <button class="btn btn-outline-success" type="submit">Search</button>
                           </form>
                       </div>
@@ -29,30 +29,32 @@
                               <thead>
                                   <tr>
                                       <th>ID</th>
-                                      <th>Job</th>
-                                      <th>Description</th>
+                                      <th> Name</th>
+                                      <th>Email</th>
+                                      <th>Phone No</th>
+                                      <th>Address</th>
                                       <th>Status</th>
                                       <th>Actions</th>
                                   </tr>
                               </thead>
                               <tbody>
-                                  <?php foreach ($careers as $career) : ?>
+                                  <?php foreach ($manufacture as $man) : ?>
                                   <tr>
-                                      <td><?= $career['id']; ?></td>
-                                      <td><?= $career['job']; ?></td>
-                                      <td><?= $career['description']; ?></td>
-                                       <td>
-                                          <input type="checkbox" name="featured" class="is-active-career-checkbox"
-                                            data-id="<?= $career['id']; ?>"
-                                            <?= $career['is_active'] ? 'checked' : '' ?>>
+                                      <td><?= $man['id']; ?></td>
+                                      <td><?= $man['manufacture_title']; ?></td>
+                                      <td><?= $man['manufacture_email']; ?></td>
+                                      <td><?= $man['manufacture_phone']; ?></td>
+                                    <td><?= $man['manufacture_address']; ?></td>
+                                      <td>
+                                          <input type="checkbox" name="featured" class="is-active-manufacture-checkbox"
+                                            data-id="<?= $man['id']; ?>"
+                                            <?= $man['is_active'] ? 'checked' : '' ?>>
                                       </td>
-                                    
-                                    
                                       <td>
                                           <!-- <a target="_blank"
-                                              href="<?= base_url('certification-training/'.$category['slug']); ?>"
+                                              href="<?= base_url('certification-training/'.$man['slug']); ?>"
                                               class="btn">View</a> -->
-                                          <a href="<?php echo base_url();?>admin/Careers/edit/<?= $career['id']; ?>"
+                                          <a href="<?php echo base_url();?>admin/manufacture/edit/<?= $man['id']; ?>"
                                               class="btn">Edit</a>
 
                                       </td>

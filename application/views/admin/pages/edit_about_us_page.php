@@ -12,7 +12,7 @@
                  </div>
 
                  <div class="row">
-                    <div id="featuredMessage"></div>
+                  
                      <div class="col-12">
                          <div class="page-url-and-view">
                              <div class="page-url-and-view__page-url">
@@ -99,12 +99,12 @@
                               </div>
                               <div class="mb-3">
                                   <label class="form-label">Text</label>
-                                  <textarea class="form-control update-table-field" rows="3"
+                                  <textarea class="form-control update-table-field summernote" rows="3"
                                     data-field="banner_description"
                                     data-table="pages"
                                     data-id="<?= $page_details['page_id']; ?>"><?php echo $page_details['banner_description']; ?></textarea>
                               </div>
-                              <div class="mb-3">
+                                <div class="mb-3">
                                 <label class="form-label">Banner Image</label>
                                 <input type="file" class="form-control update-table-image"
                                     data-field="banner_image"
@@ -113,7 +113,7 @@
                                     data-oldimg="<?= $page_details['banner_image']; ?>"
                                     data-uploadpath = "./uploads/about_us/">
                                     <img src="<?= base_url() ?><?= $page_details['banner_image']; ?>" alt="Banner Image" class="img-thumbnail mt-2" style="max-width: 200px;">
-                            </div>
+                                </div>
 
 
                             <div class="mb-3">
@@ -124,16 +124,47 @@
                                     data-id="<?= $page_details['page_id']; ?>">
                               </div>
 
-                                 <div class="mb-3">
+                                <div class="mb-3">
                                   <label class="form-label">Year of Experience </label>
                                   <input type="text" class="form-control update-table-field"  value="<?php echo $page_details['year_experience']; ?>"
                                     data-field="year_experience"
                                     data-table="pages"
                                     data-id="<?= $page_details['page_id']; ?>">
-                              </div>
+                                </div>
+
+
+                            <div class="mb-3">
+                                <label class="form-label">Our Mission</label>
+                                  <textarea rows="3" class="form-control summernote update-table-field" 
+                                    data-field="our_mission"
+                                    data-table="pages"
+                                    data-id="<?= $page_details['page_id']; ?>"><?php echo $page_details['our_mission']; ?></textarea>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Our Vision</label>
+                                  <textarea rows="3" class="form-control summernote update-table-field"  
+                                    data-field="our_vision"
+                                    data-table="pages"
+                                    data-id="<?= $page_details['page_id']; ?>"><?php echo $page_details['our_vision']; ?></textarea>
+                            </div>
+
+                             <div class="mb-3">
+                                <label class="form-label">Our Values</label>
+                                  <textarea rows="3"  class="form-control summernote update-table-field"  
+                                    data-field="our_values"
+                                    data-table="pages"
+                                    data-id="<?= $page_details['page_id']; ?>"><?php echo $page_details['our_values']; ?></textarea>
+                            </div>
+
+
+
+
                           </div>
                       </div>
                   </div>
+
+                    <div id="featuredMessage"></div>
                   <!-- banner section end -->
 
              </div>

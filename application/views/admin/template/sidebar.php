@@ -40,6 +40,16 @@
          
         </ul>
     </div>
+
+
+    <div class="admin-sidebar__item">
+        <h3 class="admin-sidebar__item-heading">Manufacturing Units</h3>
+        <ul>
+            <li><a href="<?php echo base_url('admin/Manufacture'); ?>">All Manufacturing Units</a></li>
+            <li><a href="<?php echo base_url('admin/Manufacture/create'); ?>">Create Manufacturing Units</a></li>
+         
+        </ul>
+    </div>
   
     <div class="admin-sidebar__item">
         <h3 class="admin-sidebar__item-heading">Management</h3>

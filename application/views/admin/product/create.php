@@ -17,7 +17,7 @@
 
                   <div class="row meta-section">
                       <div class="col-12">
-                          <h4 class="meta-section__title">Category Meta Information</h4>
+                          <h4 class="meta-section__title">Product Meta Information</h4>
                           <div class="meta-section__content">
 
                               <div class="meta-section__content-item">
@@ -110,17 +110,13 @@
                             
 
                               <div class="mb-3">
-                                  <label class="form-label">Brodhure Upload</label>
-                                  <input type="file" class="form-control" id="product_brodhure" name="product_brodhure" accept=".pdf, .csv, .xls, .xlsx"
+                                  <label class="form-label">Brochure Upload</label>
+                                  <input type="file" class="form-control" id="product_brochure" name="product_brochure" accept=".pdf, .csv, .xls, .xlsx"
                                    />
-                                  <div class="error" id="error_product_brodhure" style="color:red;"></div>
+                                  <div class="error" id="error_product_brochure" style="color:red;"></div>
                               </div>
 
-                              <div class="mb-3">
-                                  <label class="form-label">Link</label>
-                                  <input type="text" class="form-control" id="product_link" name="product_link">
-                                   <div class="error" id="error_product_link" style="color:red;"></div>
-                              </div>
+                             
                           </div>
                       </div>
                   </div>

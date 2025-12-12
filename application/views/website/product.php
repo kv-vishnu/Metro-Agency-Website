@@ -1,3 +1,4 @@
+<input type="hidden" id="manfacture_ids" value="<?php echo $manfacture_ids; ?>">
 <div class="page-header">
     <img src="<?php echo base_url(''); ?><?php echo $productheader[0]['banner_image']; ?>" 
          class="header-img">
@@ -6,7 +7,6 @@
         <h1><?php echo $productheader[0]['title']; ?></h1>
     </div>
 </div>
-
 
  <!-- Filter Section -->
     <div class="container">
@@ -37,7 +37,7 @@
                         <div class="product-image">
                             <a href="<?= base_url('product/'.$product['slug']); ?>">
                                  <img src="<?php echo base_url(''); ?>uploads/product/<?php echo $product['product_image']; ?>" alt="Steel Structures">
-                            <span class="product-badge">Popular</span>
+                           
                             </a>
                            
                         </div>
@@ -50,7 +50,7 @@
                                 <li><i class="fas fa-check-circle"></i> Custom designs available</li>
                             </ul> -->
                             <div class="product-footer">
-                                <a href="<?= base_url('product/'.$product['slug']); ?>" class="read-more">Get Product</a>
+                                <a href="<?= base_url('product/'.$product['slug']); ?>" class="read-more">View More</a>
                             </div>
                         </div>
                    
@@ -62,4 +62,3 @@
         </div>
     </div>
 
- 

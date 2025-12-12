@@ -52,7 +52,7 @@ $isLocal = strpos($host, 'localhost') !== false || strpos($host, '127.0.0.1') !=
 
 $config['base_url'] = $isLocal 
     ? 'http://localhost/codeigniter/metro-website/' 
-    : 'https://qr-experts.com/emigo-website/';
+    : 'https://metroagencies.in/';
 
     //echo $config['base_url'];exit;
 
@@ -259,7 +259,7 @@ $config['allow_get_array'] = TRUE;
 | your log files will fill up very fast.
 |
 */
-$config['log_threshold'] = 0;
+$config['log_threshold'] = 4;
 
 /*
 |--------------------------------------------------------------------------

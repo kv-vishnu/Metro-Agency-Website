@@ -78,7 +78,7 @@ $(document).ready(function () {
     const $btn = $(this);
     // Get form values
     const product_image = $("#product_image")[0].files[0];
-    const product_brodhure= $("#product_brodhure")[0].files[0];
+    const product_brochure= $("#product_brochure")[0].files[0];
     // Validate required fields using the utility function
     let valid = true;
     valid &= validateField({
@@ -118,11 +118,7 @@ $(document).ready(function () {
       message: "product description is required.",
     });
   
-    valid &= validateField({
-      fieldId: "#product_link",
-      errorId: "#error_product_link",
-      message: "product link is required.",
-    });
+
  
     //valid &= validateField({ fieldId: "#benefits_content", errorId: "#error_benefits_content", message: "Benefits is required." });
     valid &= validateField({
@@ -136,9 +132,9 @@ $(document).ready(function () {
   
 
         valid &= validateField({
-      fieldId: "#product_brodhure",
-      errorId: "#error_product_brodhure",
-      message: "product brodhure is required.",
+      fieldId: "#product_brochure",
+      errorId: "#error_product_brochure",
+      message: "product brochure is required.",
       isFile: true,
     allowedExtensions: ["pdf", "csv", "xls", "xlsx"],
     });
@@ -146,7 +142,7 @@ $(document).ready(function () {
 
 
     if (!valid) {
-      $btn.prop("disabled", false).text("Save Category");
+      $btn.prop("disabled", false).text("Save Product");
       return;
     } else {
       $btn.prop("disabled", true).text("Saving...");
@@ -164,7 +160,7 @@ $(document).ready(function () {
     formData.append("product_name", $("#product_name").val());
     formData.append("product_description", $("#product_description").val());
     formData.append("product_image", product_image);
-    formData.append("product_brodhure",product_brodhure);
+    formData.append("product_brochure",product_brochure);
     formData.append("product_link", $("#product_link").val());
 
 
@@ -282,7 +278,7 @@ $(document).ready(function () {
 
 
     if (!valid) {
-      $btn.prop("disabled", false).text("Update Category");
+      $btn.prop("disabled", false).text("Update Product");
       return;
     } else {
       $btn.prop("disabled", true).text("Updating...");
@@ -320,7 +316,7 @@ $(document).ready(function () {
       success: function (response) {
         if (response.status) {
           $("#categorySuccessMsg").text(response.message);
-          $btn.prop("disabled", false).text("Update category");
+          $btn.prop("disabled", false).text("Update Product");
           setTimeout(() => {
             $("#categorySuccessMsg").text("");
             window.location.href =
@@ -338,11 +334,11 @@ $(document).ready(function () {
   });
 
   //#region Status Change
-  $(".is-active-checkbox").on("change", function () {
+  $(".is-active-product-checkbox").on("change", function () {
     var id = $(this).data("id");
     var is_active = $(this).is(":checked") ? 1 : 0;
     $.ajax({
-      url: base_url + "admin/categories/update_category_status",
+      url: base_url + "admin/Product/update_category_status",
       type: "POST",
       contentType: "application/json",
       data: JSON.stringify({
@@ -353,7 +349,7 @@ $(document).ready(function () {
         $("#featuredMessage")
           .html(
             `
-            <div class="alert alert-success alert-dismissible fade show" role="alert">Category status updated.</div>
+            <div class="alert alert-success alert-dismissible fade show" role="alert"> status updated.</div>
           `
           )
           .show();

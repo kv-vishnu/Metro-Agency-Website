@@ -1,0 +1,122 @@
+  /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+
+
+            .hero-content h1 {
+                font-size: 32px;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-item {
+                min-width: 100%;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links a{
+                margin-left: 10px;
+            }
+
+            .logo{
+                margin-left: 10px;
+            }
+            .menu-toggle{
+                margin-right: 10px;
+            }
+
+            .logo img{
+            height: 50px !important;
+        }
+
+        .stat-label{
+                font-size: 20px;
+    font-weight: bold;
+        }
+        }
+
+        .logo img{
+            height: 90px;
+        }
+
+        /* responsive */
+        .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        }
+
+        .nav-links {
+        display: flex;
+        list-style: none;
+         margin-bottom: 0;
+         /* gap: 5px; */
+        }
+
+        .nav-links a {
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+        transition: color 0.3s;
+        margin-left: 25px;
+        }
+
+        .nav-links a:hover {
+        color: #e74c3c;
+        }
+
+        /* Mobile menu button */
+        .menu-toggle {
+        display: none;
+        font-size: 24px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+        .menu-toggle {
+            display: block;
+        }
+
+        .nav-links {
+            position: absolute;
+            /* top: 100px; */
+            /* top: 97px; */
+            top: 90px;
+            left: 0;
+            width: 100%;
+            flex-direction: column;
+            background: #fff;
+            display: none;
+            border-top: 1px solid #ddd;
+            padding: 0px 0;
+        }
+
+        .nav-links.active {
+            display: flex;
+        }
+
+        .nav-links li {
+            /* padding: 5px 0; */
+            padding: 10px;
+            border-bottom: 1px solid #e5e3e3;
+        }
+
+        .page-header h1{
+            font-size: 2.5rem !important;
+        }
+        .about-text h3 {
+    font-size: 18px !important;
+        }
+        }

@@ -1,4 +1,10 @@
-   :root {
+  
+  @import '../css/header.css';
+  @import '../css/section.css';
+  @import '../css/responsive.css';
+  @import '../css/footer.css';
+  
+  :root {
             --primary-color: #2c3e50;
             --secondary-color: #e74c3c;
             --accent-color: #3498db;
@@ -53,3 +59,99 @@
             font-weight: bold;
             margin-bottom: 20px;
         }
+
+
+         /* Contact Section */
+        .contact {
+            /* background: #E0E0E0; */
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 50px;
+        }
+
+        .contact-info {
+            background: #2c3e50;
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+        }
+
+        .contact-info h3 {
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: start;
+            margin-bottom: 25px;
+        }
+
+        .info-icon {
+            width: 40px;
+            height: 40px;
+            background: #f3efef;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 20px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 15px;
+            font-family: inherit;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .submit-btn {
+            background: #2c3e50;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+            justify-self: start;
+        }
+
+        .submit-btn:hover {
+            background: #c0392b;
+        }
+
+
+        @media (max-width: 768px) {
+    .about-content, .contact-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+ .form-row 
+ {
+ grid-template-columns: 1fr;
+}

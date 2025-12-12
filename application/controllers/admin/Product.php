@@ -60,19 +60,19 @@ class Product extends CI_Controller {
 
 
 
-$product_brodhure = '';
+$product_brochure = '';
 
-if (!empty($_FILES['product_brodhure']['name'])) {
+if (!empty($_FILES['product_brochure']['name'])) {
 
     $config['upload_path']   = './uploads/productbrodhure/';
     $config['allowed_types'] = 'webp|avif|svg|png|jpg|jpeg||JPG|PNG|JPEG|SVG|pdf|csv|xls|xlsx|PDF|CSV|XLS|XLSX';
-    $config['file_name']     = $_FILES['product_brodhure']['name'];
+    $config['file_name']     = $_FILES['product_brochure']['name'];
 
     $this->upload->initialize($config);
 
-    if ($this->upload->do_upload('product_brodhure')) {
+    if ($this->upload->do_upload('product_brochure')) {
         $uploadData         = $this->upload->data();
-        $product_brodhure   = $uploadData['file_name'];
+        $product_brochure   = $uploadData['file_name'];
     } else {
         echo json_encode([
             'status' => false, 
@@ -96,7 +96,7 @@ if (!empty($_FILES['product_brodhure']['name'])) {
                 'product_name'  => $product_name,
                 'product_description'   => $product_description,
                 'product_image'  => $product_image,
-                'product_brodhure'  => $product_brodhure,
+                'product_brodhure'  => $product_brochure,
                 'product_link' => $product_link,
                 'is_active' => 0
             ];
@@ -235,7 +235,7 @@ if (!empty($_FILES['product_brodhure']['name'])) {
         $json = json_decode(file_get_contents("php://input"), true);
         $id = (int) $json['id'];
         $is_active = (int) $json['is_active'];
-        $updated = $this->PageBuilder_model->updateCategoryStatus($id, $is_active);
+        $updated = $this->PageBuilder_model->updateProductStatus($id, $is_active);
         if ($updated) {
             echo json_encode(['status' => true, 'message' => 'Status changed successfully']);
         } else {

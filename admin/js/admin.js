@@ -2109,6 +2109,41 @@ $(".update-field").on("blur", function () {
       });
   });
 
+  // Summernote blur event
+$(document).on("summernote.change", ".update-table-field", function () {
+
+    var field = $(this).data("field");
+    var table = $(this).data("table");
+    var id = $(this).data("id");
+    var value = $(this).summernote('code'); // Correct way to get value
+    // alert(value);
+
+    $.ajax({
+        url: base_url + "admin/PageBuilder/update_field",
+        method: "POST",
+        data: {
+            field: field,
+            table: table,
+            id: id,
+            value: value
+        },
+        success: function (response) {
+            $("#featuredMessage").html(
+                `<div class="alert alert-success alert-dismissible fade show" role="alert">
+                     Content updated.
+                 </div>`
+            ).show();
+            setTimeout(function () {
+                $("#featuredMessage").fadeOut().empty();
+            }, 2000);
+        },
+        error: function () {
+            alert("Error updating field.");
+        }
+    });
+});
+
+
   //#region Update image edit page form
     $(document).on("change", ".update-table-image", function ()
     {

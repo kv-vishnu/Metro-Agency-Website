@@ -69,12 +69,12 @@
 
                         <div class="form-group">
                           <select name="product_name" class="form-select" id="product_name">
-                            <option value="select product">select product</option>
+                            <option value="">select product</option>
                             <?php foreach($products as $product):?>
                             <option value="<?php echo $product['product_name']; ?>"><?php echo $product['product_name']; ?></option>
                                 <?php endforeach; ?>
-                          </select>
-                             <div class="error" id="error_subject" style="color:red;"></div>
+                            </select>
+                             <div class="error" id="error_product_name" style="color:red;"></div>
                         </div>
                     </div>
                     <div class="form-group">

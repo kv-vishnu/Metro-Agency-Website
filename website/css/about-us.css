@@ -1,7 +1,22 @@
+
+@import '../css/header.css';
+ @import '../css/section.css';
+ @import '../css/animation.css';
+ /* @import '../css/manufacture.css'; */
+ @import '../css/responsive.css';
+ @import '../css/footer.css';
+
+
+
+   :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #e74c3c;
+            --accent-color: #3498db;
+        }
 body 
 {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8f9fa;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+background: #f8f9fa;
 }
  /* Page Header */
  .page-header {
@@ -44,11 +59,266 @@ body
             font-size: 3.5rem;
             font-weight: bold;
             margin-bottom: 20px;
-        }
+    }
 
-        .products-image img {
-    height: 350px;
+.products-image img {
+    height: 300px;
     width: 100%;
     background-size: cover;
     background-position: center;
 }
+
+.about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 400px;
+            /* background: url('./images/about-img.jpg') center/cover; */
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .about-text h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            font-weight: 700;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+            color: #666;
+        }
+
+
+ @media (max-width: 768px) {
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+                .product-content {
+            padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+         .product-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .product-description {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+            .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+        
+        .product-image {
+            position: relative;
+            overflow: hidden;
+            height: 280px;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+        
+                .product-content h3 {
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .product-content p {
+            color: #666;
+            font-size: 15px;
+        }
+
+
+
+        /* our mission and vision and values */
+
+         .infrastructure-section {
+            padding: 60px 0;
+            background: #f8f9fa;
+        }
+        
+        .infrastructure-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 35px;
+            margin-top: 40px;
+        }
+        
+        .infrastructure-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+        
+        .infrastructure-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+        
+        .card-image-container {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .card-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .infrastructure-card:hover .card-image {
+            transform: scale(1.1);
+        }
+        
+        .card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.7));
+            display: flex;
+            align-items: flex-end;
+            padding: 25px;
+        }
+        
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .card-content {
+            padding: 30px;
+        }
+        
+        .card-content h3 {
+            font-size: 1.6rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+      .our-mission p
+    {
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    font-size: 1.05rem;
+    }
+ 
+    .our-mission li
+    {
+    padding: 10px 0;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    }
+
+  .our-mission li::before {
+    
+    content: "\f058";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    left: 0;
+    top: 2px;
+    font-size: 16px;
+    color: #e74c3c;
+    }
+
+
+
+
+        .section-subtitle {
+    text-align: center;
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 50px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.about-text p{
+        color: #555;
+    margin-bottom: 30px;
+    font-size: 1.05rem;
+}
+
+.about-text ul{
+    list-style: none;
+    padding: 0;
+}
+
+.about-text ul li{
+    padding: 10px 0;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.about-text li::before {
+    content: "\f058";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    left: 0;
+    top: 2px;
+    font-size: 16px;
+    color: #e74c3c;
+    }
+        
+

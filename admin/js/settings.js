@@ -184,7 +184,7 @@ $(document).ready(function () {
     });
     
     if (!valid) {
-      $btn.prop("disabled", false).text("Update Slider");
+      $btn.prop("disabled", false).text("Update ");
       return;
     } else {
       $btn.prop("disabled", true).text("Updating...");

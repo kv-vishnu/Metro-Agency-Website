@@ -20,7 +20,6 @@
 
                 <!-- Right Side - Product Info -->
                 <div class="product-info">
-                    <span class="product-category-badge">Steel Solutions</span>
                     <h1 class="product-title"><?php echo $product['product_name']; ?></h1>
                     
                     <!-- <div class="product-rating">

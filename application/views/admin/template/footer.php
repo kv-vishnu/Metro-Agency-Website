@@ -21,6 +21,7 @@
 <script type="module" src="<?php echo base_url();?>admin/js/recruitment.js"></script>
 <script type="module" src="<?php echo base_url();?>admin/js/management.js"></script>
 <script type="module" src="<?php echo base_url();?>admin/js/infrastructure.js"></script>
+<script type="module" src="<?php echo base_url();?>admin/js/manufacture.js"></script>
 </body>
 
 </html>

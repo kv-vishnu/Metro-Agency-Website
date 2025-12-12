@@ -23,8 +23,8 @@
             </div>
 
             <div class="about-text">
-               <h3> <?= $aboutus[0]['banner_title'] ?? '' ?></h3>
-               <p> <?= $aboutus[0]['banner_description'] ?? '' ?></p>
+               <!-- <h3> <?= $aboutus[0]['banner_title'] ?? '' ?></h3> -->
+              <?= $aboutus[0]['banner_description'] ?? '' ?>
                            <div class="stats">
                         <div class="stat-item">
                             <div class="stat-number"><?= $aboutus[0]['project_completed'] ?? '' ?></div>
@@ -49,6 +49,49 @@
 </section>
 
 
+    <section class="infrastructure-section">
+        <div class="container">
+            <h2 class="section-title">What We Stand For</h2>
+            
+            <div class="infrastructure-grid">
+                <!-- Facility 1 -->
+                <div class="infrastructure-card">
+                    <div class="card-content">
+                        <h3>Our Mission</h3>
+                        <div class="our-mission">
+                            <?= $aboutus[0]['our_mission'] ?? '' ?>
+                        </div>
+                       
+                    </div>
+                </div>
+
+                <!-- Facility 2 -->
+                <div class="infrastructure-card">
+                   
+                    <div class="card-content">
+                        <h3>Our Vision </h3>
+                         <div class="our-mission">
+                            <?= $aboutus[0]['our_vision'] ?? '' ?>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Facility 3 -->
+                <div class="infrastructure-card">
+                    <div class="card-content">
+                        <h3>Our Values</h3>
+                        <div class="our-mission">
+                            <?= $aboutus[0]['our_values'] ?? '' ?>
+                    </div>
+                </div>
+
+                <!-- Facility 4 -->
+              
+            </div>
+        </div>
+    </section>
+
+
 <!-- management section -->
 
     <section class="products section" id="products">
@@ -59,7 +102,7 @@
             </p> -->
             <div class="row g-4">
               <?php foreach ($management as $manage): ?>
-            <div class="col-lg-4 col-md-6 ">
+            <div class="col-lg-3 col-md-6 ">
                
                 <div class="product-card">
                     <div class="products-image">
@@ -67,8 +110,8 @@
                     </div>
                     <div class="product-content">
                         <h3><?php echo $manage['name']; ?></h3>
-                        <p><?php echo $manage['designation']; ?></p>
-                        <p><?php echo $manage['short_bio']; ?></p>
+                        <!-- <p><?php echo $manage['designation']; ?></p>
+                        <p><?php echo $manage['short_bio']; ?></p> -->
                         <!-- <a href="#" class="read-more">Read More</a> -->
                     </div>
                 </div>

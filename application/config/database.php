@@ -75,36 +75,91 @@ $query_builder = TRUE;
 
 $active_group = 'default';
 $query_builder = TRUE;
+$host = $_SERVER['HTTP_HOST'];
+// echo $host;
 
-$db['default'] = array(
-	'dsn'	=> '',
-	'hostname' => 'localhost',
-//  'username' => 'qrexpdrg_qrexpdrg',
-//  'password' => '2aA@studio123',
-//  'database' => 'qrexpdrg_qrexpert',
-//  'username' => 'woodsberg_user',
-//  'password' => '2aA@studio123',
-//  'database' => 'woodsberg',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'emigo-website',
-	'dbdriver' => 'mysqli',
-	'dbprefix' => '',
-	'pconnect' => FALSE,
-	'db_debug' => (ENVIRONMENT !== 'production'),
-	'cache_on' => FALSE,
-	'cachedir' => '',
-	// 'char_set' => 'utf8',
-	// 'dbcollat' => 'utf8_general_ci',
-	'char_set' => 'utf8mb4',
-    'dbcollat' => 'utf8mb4_unicode_ci',
-	'swap_pre' => '',
-	'encrypt' => FALSE,
-	'compress' => FALSE,
-	'stricton' => FALSE,
-	'failover' => array(),
-	'save_queries' => TRUE
-);
+if($host == 'localhost')
+{
+    $db['default'] = array(
+        'dsn'      => '',
+        'hostname' => 'localhost',
+        'username' => 'root',
+        'password' => '',
+        'database' => 'emigo-website',
+        'dbdriver' => 'mysqli',
+        'dbprefix' => '',
+        'pconnect' => FALSE,
+        'db_debug' => (ENVIRONMENT !== 'production'),
+        'cache_on' => FALSE,
+        'cachedir' => '',
+        'char_set' => 'utf8mb4',
+        'dbcollat' => 'utf8mb4_unicode_ci',
+        'swap_pre' => '',
+        'encrypt' => FALSE,
+        'compress' => FALSE,
+        'stricton' => FALSE,
+        'failover' => array(),
+        'save_queries' => TRUE
+    );
+}
+
+
+if($host == 'metroagencies.in')
+{
+    $db['default'] = array(
+        'dsn'      => '',
+        'hostname' => 'localhost',
+        'username' => 'metro-agency_user',
+        'password' => '2aA@studio123',
+        'database' => 'metro-agency',
+        'dbdriver' => 'mysqli',
+        'dbprefix' => '',
+        'pconnect' => FALSE,
+        'db_debug' => (ENVIRONMENT !== 'production'),
+        'cache_on' => FALSE,
+        'cachedir' => '',
+        'char_set' => 'utf8mb4',
+        'dbcollat' => 'utf8mb4_unicode_ci',
+        'swap_pre' => '',
+        'encrypt' => FALSE,
+        'compress' => FALSE,
+        'stricton' => FALSE,
+        'failover' => array(),
+        'save_queries' => TRUE
+    );
+}
+
+
+
+// $db['default'] = array(
+// 	'dsn'	=> '',
+// 	'hostname' => 'localhost',
+// //  'username' => 'qrexpdrg_qrexpdrg',
+// //  'password' => '2aA@studio123',
+// //  'database' => 'qrexpdrg_qrexpert',
+// //  'username' => 'woodsberg_user',
+// //  'password' => '2aA@studio123',
+// //  'database' => 'woodsberg',
+// 	'username' => 'root',
+// 	'password' => '',
+// 	'database' => 'emigo-website',
+// 	'dbdriver' => 'mysqli',
+// 	'dbprefix' => '',
+// 	'pconnect' => FALSE,
+// 	'db_debug' => (ENVIRONMENT !== 'production'),
+// 	'cache_on' => FALSE,
+// 	'cachedir' => '',
+// 	// 'char_set' => 'utf8',
+// 	// 'dbcollat' => 'utf8_general_ci',
+// 	'char_set' => 'utf8mb4',
+//     'dbcollat' => 'utf8mb4_unicode_ci',
+// 	'swap_pre' => '',
+// 	'encrypt' => FALSE,
+// 	'compress' => FALSE,
+// 	'stricton' => FALSE,
+// 	'failover' => array(),
+// 	'save_queries' => TRUE
+// );
 
 // $host = $_SERVER['HTTP_HOST'];
 

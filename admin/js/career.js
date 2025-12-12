@@ -218,7 +218,7 @@ $(document).ready(function () {
 
 //checkbox
 
-   $(".is-active-checkbox").on("change", function () {
+   $(".is-active-career-checkbox").on("change", function () {
     var id = $(this).data("id");
     var is_active = $(this).is(":checked") ? 1 : 0;
     $.ajax({

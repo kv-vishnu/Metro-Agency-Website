@@ -12,10 +12,10 @@
                   </div>
                   <div class="row mb-3">
                       <div class="col-12">
-                          <form class="d-flex" action="<?= base_url('admin/search') ?>" method="post">
-                              <input type="hidden" name="search_type" value="category">
+                          <form class="d-flex" action="<?= base_url('admin/search/search_product') ?>" method="post">
+                              <input type="hidden" name="search_type" value="product">
                               <input class="form-control me-2" type="search" name="search_term"
-                                  placeholder="Search Category" aria-label="Search">
+                                  placeholder="Search Product" aria-label="Search">
                               <button class="btn btn-outline-success" type="submit">Search</button>
                           </form>
                       </div>
@@ -29,8 +29,8 @@
                               <thead>
                                   <tr>
                                       <th>ID</th>
-                                      <th>Category Name</th>
-                                      <th>Category Description</th>
+                                      <th>Product Name</th>
+                                      <!-- <th>Category Description</th> -->
                                       <th>Status</th>
                                       <th>Actions</th>
                                   </tr>
@@ -40,16 +40,14 @@
                                   <tr>
                                       <td><?= $product['id']; ?></td>
                                       <td><?= $product['product_name']; ?></td>
-                                      <td><?= $product['product_description']; ?></td>
+                                      <!-- <td><?= $product['product_description']; ?></td> -->
                                       <td>
-                                          <input type="checkbox" name="featured" class="is-active-checkbox"
-                                            data-id="<?= $category['id']; ?>"
-                                            <?= $category['is_active'] ? 'checked' : '' ?>>
+                                          <input type="checkbox" name="featured" class="is-active-product-checkbox"
+                                            data-id="<?= $product['id']; ?>"
+                                            <?= $product['is_active'] ? 'checked' : '' ?>>
                                       </td>
                                       <td>
-                                          <!-- <a target="_blank"
-                                              href="<?= base_url('certification-training/'.$category['slug']); ?>"
-                                              class="btn">View</a> -->
+                                         
                                           <a href="<?php echo base_url();?>admin/product/edit/<?= $product['id']; ?>"
                                               class="btn">Edit</a>
 

@@ -30,7 +30,7 @@
                                   <tr>
                                       <th>ID</th>
                                       <th>Category Name</th>
-                                      <th>Category Description</th>
+                                      <!-- <th>Category Description</th> -->
                                       <th>Status</th>
                                       <th>Actions</th>
                                   </tr>
@@ -40,16 +40,14 @@
                                   <tr>
                                       <td><?= $category['id']; ?></td>
                                       <td><?= $category['category_title']; ?></td>
-                                      <td><?= $category['category_description']; ?></td>
+                                      <!-- <td><?= $category['category_description']; ?></td> -->
                                       <td>
-                                          <input type="checkbox" name="featured" class="is-active-checkbox"
+                                          <input type="checkbox" name="featured" class="is-active-category-checkbox"
                                             data-id="<?= $category['id']; ?>"
                                             <?= $category['is_active'] ? 'checked' : '' ?>>
                                       </td>
                                       <td>
-                                          <!-- <a target="_blank"
-                                              href="<?= base_url('certification-training/'.$category['slug']); ?>"
-                                              class="btn">View</a> -->
+                                          
                                           <a href="<?php echo base_url();?>admin/categories/edit/<?= $category['id']; ?>"
                                               class="btn">Edit</a>
 

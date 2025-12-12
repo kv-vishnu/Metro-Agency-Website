@@ -12,10 +12,10 @@
                   </div>
                   <div class="row mb-3">
                       <div class="col-12">
-                          <form class="d-flex" action="<?= base_url('admin/search/search_category') ?>" method="post">
+                          <form class="d-flex" action="<?= base_url('admin/search/search_infrastructure') ?>" method="post">
                               <input type="hidden" name="search_type" value="category">
                               <input class="form-control me-2" type="search" name="search_term"
-                                  placeholder="Search Category" aria-label="Search">
+                                  placeholder="Search Infrastructure" aria-label="Search">
                               <button class="btn btn-outline-success" type="submit">Search</button>
                           </form>
                       </div>
@@ -30,7 +30,7 @@
                                   <tr>
                                       <th>ID</th>
                                       <th> Name</th>
-                                      <th> Description</th>
+                                      <!-- <th> Description</th> -->
                                       <th>Status</th>
                                       <th>Actions</th>
                                   </tr>
@@ -40,16 +40,13 @@
                                   <tr>
                                       <td><?= $infra['id']; ?></td>
                                       <td><?= $infra['infrastructure_title']; ?></td>
-                                      <td><?= $infra['infrastructure_description']; ?></td>
+                                      <!-- <td><?= $infra['infrastructure_description']; ?></td> -->
                                       <td>
-                                          <input type="checkbox" name="featured" class="is-active-checkbox"
+                                          <input type="checkbox" name="featured" class="is-active-infrastructure-checkbox"
                                             data-id="<?= $infra['id']; ?>"
                                             <?= $infra['is_active'] ? 'checked' : '' ?>>
                                       </td>
                                       <td>
-                                          <!-- <a target="_blank"
-                                              href="<?= base_url('certification-training/'.$category['slug']); ?>"
-                                              class="btn">View</a> -->
                                           <a href="<?php echo base_url();?>admin/infrastructure/edit/<?= $infra['id']; ?>"
                                               class="btn">Edit</a>
 

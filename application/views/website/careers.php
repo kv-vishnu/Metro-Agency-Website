@@ -25,10 +25,10 @@
         <div class="container">
             <h2 class="section-title">Current Openings</h2>
             <!-- Job 1 -->
-             <?php foreach ($careers as $job): ?>
+             <?php if (!empty($careers)): ?>
+            <?php foreach ($careers as $job): ?>
             <div class="job-card">
                 <div class="job-header">
-                    
                     <div>
                         <h3 class="job-title"><?php echo $job['job']; ?></h3>
                         <div class="job-meta">
@@ -40,13 +40,10 @@
                                 <i class="fas fa-map-marker-alt"></i>
                                 <span><?php echo $job['location']; ?></span>
                             </div>
-                            <div class="job-meta-item">
-                                <i class="fas fa-clock"></i>
-                                <span>Posted 2 days ago</span>
-                            </div>
+                            
                         </div>
                     </div>
-                    <span class="job-badge full-time">Full Time</span>
+                    
                 </div>
                     <div class="random-content">
                          <?php echo $job['description']; ?>
@@ -54,6 +51,11 @@
                 <button type="button" data-value="<?php echo htmlspecialchars($job['job'], ENT_QUOTES); ?>" class="btn-apply" data-bs-toggle="modal" data-bs-target="#exampleModal">Apply Now</button>
             </div>
             <?php endforeach; ?>
+              <?php else: ?>
+            <!-- No careers available -->
+            <p class="text-center">There are currently no job openings. Please check back later.</p>
+        <?php endif; ?>
+
         </div>
     </section>
 </body>
