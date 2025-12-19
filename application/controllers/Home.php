@@ -39,6 +39,7 @@ public function index(){
 //MARK:  - View Page
 public function viewPage($slug)
 {
+    // echo "here";
     if($slug == 'home')
     {
       $page = $this->PageBuilder_model->getPageBySlug($slug);

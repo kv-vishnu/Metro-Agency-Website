@@ -68,7 +68,7 @@
 
             <div class="about-text">
                <h3> <?= $aboutus[0]['banner_title'] ?? '' ?></h3>
-               <?= $aboutus[0]['banner_description'] ?? '' ?>
+               <?= $aboutus[0]['banner_summary'] ?? '' ?>
                            <div class="stats">
                         <div class="stat-item">
                             <div class="stat-number"><?= $aboutus[0]['project_completed'] ?? '' ?></div>

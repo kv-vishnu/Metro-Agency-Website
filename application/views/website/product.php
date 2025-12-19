@@ -11,7 +11,7 @@
  <!-- Filter Section -->
     <div class="container">
         <div class="filter-section">
-            <div class="text-center">
+            <div class="">
                 <h5 class="mb-3">Filter by Category</h5>
                  <?php foreach ($categories as $category): ?>
                 <button class="filter-btn" data-category="<?php echo $category['id']; ?>"><?php echo $category['category_title']; ?></button>

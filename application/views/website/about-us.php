@@ -16,17 +16,13 @@
             <?= $aboutus [0]['title'] ?? '' ?>
         </h2>
 
-        <div class="about-content">
-
-            <div class="about-image slide-in"
-                 style="background-image:url('<?= base_url($aboutus [0]['banner_image']) ?>')">
-            </div>
+        <div class="about-contents">
 
             <div class="about-text">
                <!-- <h3> <?= $aboutus[0]['banner_title'] ?? '' ?></h3> -->
               <?= $aboutus[0]['banner_description'] ?? '' ?>
-                           <div class="stats">
-                        <div class="stat-item">
+                        <div class="stats">
+                        <!-- <div class="stat-item">
                             <div class="stat-number"><?= $aboutus[0]['project_completed'] ?? '' ?></div>
                             <div class="stat-label">Projects Completed</div>
                         </div>
@@ -37,7 +33,7 @@
                         <div class="stat-item">
                             <div class="stat-number">100%</div>
                             <div class="stat-label">Client Satisfaction</div>
-                        </div>
+                        </div> -->
             </div>
             </div>
 
@@ -55,15 +51,7 @@
             
             <div class="infrastructure-grid">
                 <!-- Facility 1 -->
-                <div class="infrastructure-card">
-                    <div class="card-content">
-                        <h3>Our Mission</h3>
-                        <div class="our-mission">
-                            <?= $aboutus[0]['our_mission'] ?? '' ?>
-                        </div>
-                       
-                    </div>
-                </div>
+               
 
                 <!-- Facility 2 -->
                 <div class="infrastructure-card">
@@ -73,6 +61,17 @@
                          <div class="our-mission">
                             <?= $aboutus[0]['our_vision'] ?? '' ?>
                         </div>
+                    </div>
+                </div>
+
+                <!-- Facility 1 -->
+                 <div class="infrastructure-card">
+                    <div class="card-content">
+                        <h3>Our Mission</h3>
+                        <div class="our-mission">
+                            <?= $aboutus[0]['our_mission'] ?? '' ?>
+                        </div>
+                       
                     </div>
                 </div>
 

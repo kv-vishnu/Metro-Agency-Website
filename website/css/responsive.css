@@ -38,9 +38,15 @@
         }
 
         .stat-label{
-                font-size: 20px;
-    font-weight: bold;
+        font-size: 20px;
+        font-weight: bold;
         }
+
+        .filter-btn{
+            min-width: 290px !important;
+        }
+
+
         }
 
         .logo img{
@@ -118,5 +124,11 @@
         }
         .about-text h3 {
     font-size: 18px !important;
+        }
+
+        .infrastructure-grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)) !important;
+    /* grid-template-columns: repeat(2, 1fr); */
+
         }
         }

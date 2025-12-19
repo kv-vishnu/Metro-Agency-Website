@@ -97,6 +97,14 @@
                                     data-table="pages"
                                     data-id="<?= $page_details['page_id']; ?>">
                               </div>
+
+                               <div class="mb-3">
+                                  <label class="form-label">summary</label>
+                                  <textarea class="form-control update-table-field summernote" rows="3"
+                                    data-field="banner_summary"
+                                    data-table="pages"
+                                    data-id="<?= $page_details['page_id']; ?>"><?php echo $page_details['banner_summary']; ?></textarea>
+                              </div>
                               <div class="mb-3">
                                   <label class="form-label">Text</label>
                                   <textarea class="form-control update-table-field summernote" rows="3"
@@ -104,6 +112,8 @@
                                     data-table="pages"
                                     data-id="<?= $page_details['page_id']; ?>"><?php echo $page_details['banner_description']; ?></textarea>
                               </div>
+
+                               
                                 <div class="mb-3">
                                 <label class="form-label">Banner Image</label>
                                 <input type="file" class="form-control update-table-image"
