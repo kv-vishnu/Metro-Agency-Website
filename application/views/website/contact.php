@@ -10,10 +10,74 @@
 </div>
 
 
+<section id="about" class="section">
+    <div class="container">
+
+        <h2 class="section-title">
+            <?= $contactheader [0]['banner_title'] ?? '' ?>
+        </h2>
+
+        <div class="contact-contents">
+
+            <div class="contact-text">
+             
+              <?= $contactheader[0]['banner_summary'] ?? '' ?>
+                        
+            </div>
+
+
+            <div class="">
+        <form class="contact-form" id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                             <div class="error" id="error_name" style="color:red;"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" type="email" placeholder="Your Email" required>
+                             <div class="error" id="error_email" style="color:red;"></div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input id="phone_no" name="phone_no" type="tel" placeholder="Phone Number">
+                             <div class="error" id="error_phone_no" style="color:red;"></div>
+                        </div>
+                        <div class="form-group">
+                            <input id="subject" name="subject" type="text" placeholder="Subject">
+                             <div class="error" id="error_subject" style="color:red;"></div>
+                        </div>
+
+                        <div class="form-group">
+                          <select name="product_name" class="form-select" id="product_name">
+                            <option value="">select product</option>
+                            <?php foreach($products as $product):?>
+                            <option value="<?php echo $product['product_name']; ?>"><?php echo $product['product_name']; ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                             <div class="error" id="error_product_name" style="color:red;"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                         <div class="error" id="error_message" style="color:red;"></div>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+</section>
+
     <!-- Contact Section -->
-    <section class="contact section" id="contact">
+    <section class="contact section d-none" id="contact">
         <div class="container">
-            <h2 class="section-title">Contact Us</h2>
+            <!-- <h2 class="section-title">Contact Form</h2> -->
             <div class="contact-content">
                 <div class="contact-info">
                     <h3>Get In Touch</h3>

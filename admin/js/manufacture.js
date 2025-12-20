@@ -131,6 +131,14 @@ $(document).ready(function () {
       errorId: "#error_manufacture_phone",
       message: "manufacture phone is required.",
     });
+
+
+            valid &= validateField({
+      fieldId: "#manufacture_description",
+      errorId: "#error_manufacture_description",
+      message: "manufacture description is required.",
+    });
+
         valid &= validateField({
       fieldId: "#manufacture_address",
       errorId: "#error_manufacture_address",
@@ -169,6 +177,7 @@ $(document).ready(function () {
     formData.append("meta_description", $("#meta_description").val());
     formData.append("page_schema", $("#page_schema").val());
     formData.append("manufacture_title", $("#manufacture_title").val());
+    formData.append("manufacture_description", $("#manufacture_description").val());
 $('input[name="manufacture_category_id[]"]:checked').each(function () {
     formData.append("manufacture_category_id[]", $(this).val());
 });
@@ -270,6 +279,12 @@ $('input[name="manufacture_category_id[]"]:checked').each(function () {
       message: "manufacture address is required.",
     });
 
+        valid &= validateField({
+      fieldId: "#manufacture_edit_description",
+      errorId: "#error_manufacture_edit_description",
+      message: "manufacture description is required.",
+    });
+
     
     //valid &= validateField({ fieldId: "#benefits_content", errorId: "#error_benefits_content", message: "Benefits is required." });
     if (manufacture_image) {
@@ -304,6 +319,7 @@ $('input[name="manufacture_edit_category_id[]"]:checked').each(function () {
 });
 
 
+    formData.append("manufacture_description", $("#manufacture_edit_description").val());
     // formData.append("manufacture_category_id", $("#manufacture_category_id[]").val());
     formData.append("manufacture_email", $("#manufacture_edit_email").val());
     formData.append("manufacture_phone", $("#manufacture_edit_phone").val());

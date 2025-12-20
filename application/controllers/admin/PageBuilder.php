@@ -87,7 +87,19 @@ class PageBuilder extends CI_Controller {
             $data['page_details'] = $this->PageBuilder_model->getPage($page_id);
             $data['slug'] = $data['page_details']['slug'];
             $this->load->view('admin/template/header', $data);
-            $this->load->view('admin/pages/edit_about_us_page', $data);
+             $this->load->view('admin/pages/edit_about_us_page', $data);
+          
+            $this->load->view('admin/template/footer');
+            return;
+        }
+
+         if($page_id == 12) //If it is about-us page
+        {
+            // $data['contents'] = $this->PageBuilder_model->getPageContents('page_aboutus');
+            $data['page_details'] = $this->PageBuilder_model->getPage($page_id);
+            $data['slug'] = $data['page_details']['slug'];
+            $this->load->view('admin/template/header', $data);
+             $this->load->view('admin/pages/edit_industries_page', $data);
             $this->load->view('admin/template/footer');
             return;
         }

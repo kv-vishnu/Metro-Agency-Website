@@ -125,6 +125,33 @@ public function viewPage($slug)
     }
 
 
+        if($slug == 'Industries')
+    {
+        $page = $this->PageBuilder_model->getPageBySlug($slug);
+
+    if (!$page) {
+        show_404();
+    }
+
+    // Send meta data to view
+        $data['metatitle']        = $page['metatitle'];
+        $data['metakeywords']     = $page['metakeywords'];
+        $data['metadescription']  = $page['metadescription'];
+        $data['canonical']        = base_url($slug);
+        $data['page_title']       = $page['page_heading']; // Or another title
+        $data['slug']             = $slug;
+        $data['current_page_slug'] = 'Industries'; /* Depends on slug load css in header */
+        $data['pages'] = $this->PageBuilder_model->getAllPagesList();  // get header menu items
+        $data['industriesheader'] = $this->PageBuilder_model->getIndustriescontent(12);
+        $data['industries'] = $this->PageBuilder_model->getIndustriescontent(12);
+        $this->load->view('admin/includes/header',$data);
+        $this->load->view('website/industries',$data);
+        $this->load->view('admin/includes/footer',$data);
+        return;
+        //echo "here home";exit;
+    }
+
+
     if($slug == 'contact')
     {
         $page = $this->PageBuilder_model->getPageBySlug($slug);
@@ -212,6 +239,8 @@ public function viewPage($slug)
     {
     $data['current_page_slug'] = 'product'; /* Depends on slug load css in header */
     $manfacture_category_id = $this->input->post('manfacture_category_id'); 
+    $manufacture_id = $this->input->post('manfacture_id');
+    // echo $manufacture_id;
     // echo $manfacture_category_id; exit;
     if($manfacture_category_id)
 {
@@ -230,6 +259,8 @@ public function viewPage($slug)
         $data['slug']             = $slug;
        $manfacture_ids = explode(',', $manfacture_category_id);
        $data['manfacture_ids'] = $manfacture_category_id;
+       $data['manufacture_description'] = $this->PageBuilder_model->getManufactureDescription($manufacture_id);
+    // print_r($data['manufacture_description']);
        $data['products'] = $this->PageBuilder_model->getManufactureproductsByIds($manfacture_ids);
        $data['categories'] = $this->PageBuilder_model->getManufactureCategoryList($manfacture_ids);
        $data['pages'] = $this->PageBuilder_model->getAllPagesList();  // get header menu items

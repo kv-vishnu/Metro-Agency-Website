@@ -69,8 +69,23 @@ if ($host == 'localhost'
    echo '<link href="' . base_url('website/css/about-us.css') . '" rel="stylesheet"/>';
    }
 
+   
+
 
 if($host == 'metroagencies.in' && $current_page_slug==='aboutus'){
+    echo '<link href="' . base_url('website/css/about-us.css') . '" rel="stylesheet"/>';
+}
+
+// Industries
+
+if ($host == 'localhost' 
+    && strpos($uri, '/codeigniter/metro-website') !== false
+    && $current_page_slug === 'Industries') 
+   {  
+   echo '<link href="' . base_url('website/css/about-us.css') . '" rel="stylesheet"/>';
+   }
+
+if($host == 'metroagencies.in' && $current_page_slug==='Industries'){
     echo '<link href="' . base_url('website/css/about-us.css') . '" rel="stylesheet"/>';
 }
 

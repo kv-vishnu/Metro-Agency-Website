@@ -10,13 +10,13 @@
 } */
 
 .carousel-captions {
-    position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 61%;
+    transform: translateY(-50%);
+    bottom: auto;
+    /* left: 48% !important; */
+    left: 41% !important;
     transform: translate(-50%, -50%);
     text-align: center;
-    width: 100%;
-    padding: 0 20px; /* safe padding on mobile */
 }
 
 .carousel-captions h5 {

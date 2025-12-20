@@ -286,3 +286,42 @@ ease;
             font-size: 15px;
         }
 
+
+
+
+
+        .product-contents {
+            display: grid;
+            grid-template-columns:  1fr;
+            gap: 50px;
+        }
+
+        .product-text p{
+        color: #555;
+    /* margin-bottom: 30px; */
+    font-size: 1.05rem;
+}
+
+.product-text ul{
+    list-style: none;
+    padding: 0;
+}
+
+.product-text ul li{
+    padding: 10px 0;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.product-text li::before {
+    content: "\f058";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    left: 0;
+    top: 2px;
+    font-size: 16px;
+    color: #e74c3c;
+    }
+

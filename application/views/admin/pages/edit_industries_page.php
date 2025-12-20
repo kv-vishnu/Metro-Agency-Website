@@ -12,7 +12,7 @@
                  </div>
 
                  <div class="row">
-                    <div id="featuredMessage"></div>
+                  
                      <div class="col-12">
                          <div class="page-url-and-view">
                              <div class="page-url-and-view__page-url">
@@ -27,7 +27,7 @@
                  <!-- meta section -->
                  <div class="row meta-section">
                     <div class="col-12">
-                        <h4 class="meta-section__title">Meta Information</h4>
+                        <h4 class="meta-section__title">Meta Informations</h4>
                         <div class="meta-section__content">
                             <div class="meta-section__content-item">
                                 <label class="form-label">Meta Title</label>
@@ -56,7 +56,7 @@
                             <div class="meta-section__content-item">
                                 <label class="form-label">Slug</label>
                                 <input type="text" class="form-control update-table-field" id="slug" value="<?php echo $page_details['slug']; ?>"
-                                data-field="slug"
+                                data-field="title"
                                 data-table="pages"
                                 data-id="<?= $page_details['page_id']; ?>">
                             </div>
@@ -97,37 +97,34 @@
                                     data-table="pages"
                                     data-id="<?= $page_details['page_id']; ?>">
                               </div>
+
+                              
                               <div class="mb-3">
                                   <label class="form-label">Text</label>
-                                  <textarea class="form-control update-table-field" rows="3"
+                                  <textarea class="form-control update-table-field summernote" rows="3"
                                     data-field="banner_description"
                                     data-table="pages"
                                     data-id="<?= $page_details['page_id']; ?>"><?php echo $page_details['banner_description']; ?></textarea>
                               </div>
 
-                                 <div class="mb-3">
-                                  <label class="form-label">Description</label>
-                                  <textarea class="form-control update-table-field summernote" rows="3"
-                                    data-field="banner_summary"
-                                    data-table="pages"
-                                    data-id="<?= $page_details['page_id']; ?>"><?php echo $page_details['banner_summary']; ?></textarea>
-                              </div>
-                              <div class="mb-3">
+                               
+                                <div class="mb-3">
                                 <label class="form-label">Banner Image</label>
                                 <input type="file" class="form-control update-table-image"
                                     data-field="banner_image"
                                     data-table="pages"
                                     data-id="<?= $page_details['page_id']; ?>"
                                     data-oldimg="<?= $page_details['banner_image']; ?>"
-                                    data-uploadpath = "./uploads/page_contact/">
-                                    <img src="<?= base_url()?><?= $page_details['banner_image']; ?>" alt="Banner Image" class="img-thumbnail mt-2" style="max-width: 200px;">
-                            </div>
+                                    data-uploadpath = "./uploads/industries/">
+                                    <img src="<?= base_url() ?><?= $page_details['banner_image']; ?>" alt="Banner Image" class="img-thumbnail mt-2" style="max-width: 200px;">
+                                </div>
                           </div>
                       </div>
                   </div>
+
+                    <div id="featuredMessage"></div>
                   <!-- banner section end -->
 
-               
              </div>
 
 

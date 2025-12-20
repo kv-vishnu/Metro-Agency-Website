@@ -138,6 +138,13 @@
                                   <div class="error" id="error_manufacture_image" style="color:red;"></div>
                               </div>
 
+                                <div class="mb-3">
+                                  <label class="form-label">Description</label>
+                                  <textarea class="form-control summernote" id="manufacture_description" name="manufacture_description"
+                                      rows="3"></textarea>
+                                  <div class="error" id="error_manufacture_description" style="color:red;"></div>
+                                </div>
+
                               <!-- <div class="mb-3">
                                   <label class="form-label">Link</label>
                                   <input type="text" class="form-control" id="category_link" name="category_link">

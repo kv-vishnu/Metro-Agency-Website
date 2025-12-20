@@ -38,6 +38,11 @@ class PageBuilder_model extends CI_Model {
         return $this->db->where('page_id', $id)->get('pages')->result_array();
     }
 
+        public function getIndustriescontent($id)
+    {
+        return $this->db->where('page_id', $id)->get('pages')->result_array();
+    }
+
         public function getCareerscontent($id)
     {
         return $this->db->where('page_id', $id)->get('pages')->result_array();
@@ -258,6 +263,13 @@ public function getManufactureproductsByIds($ids)
     $this->db->where_in('product_category', $ids);
     $this->db->where('is_active', 0);
     return $this->db->get('tbl_product')->result_array();
+}
+
+
+public function getManufactureDescription($id){
+    $this->db->where('id', $id);
+     $this->db->where('is_active', 0);
+    return $this->db->get('tbl_manufacture')->row_array();
 }
 
 

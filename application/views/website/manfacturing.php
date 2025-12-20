@@ -28,13 +28,16 @@
                         <div class="product-content">
                             <h3 class="product-title"><?php echo $manufacture['manufacture_title']; ?></h3>
                             <p class="product-description"><?php echo $manufacture['manufacture_address']; ?></p>
-                            <p class="product-description"><?php echo $manufacture['manufacture_phone']; ?></p>
+                            <p class="product-phone"><i class="fas fa-phone me-2"></i><?php echo $manufacture['manufacture_phone']; ?></p>
                            
                             <div class="product-footer">
                                <form action="<?= base_url('product/') ?>" method="post">
                                     <input type="hidden" 
                                         name="manfacture_category_id" 
                                         value="<?= $manufacture['manufacture_category_id']; ?>">
+                                            <input type="hidden" 
+                                        name="manfacture_id" 
+                                        value="<?= $manufacture['id']; ?>">
                                     <button type="submit" class="read-more">View More</button>
                                 </form>
                             </div>

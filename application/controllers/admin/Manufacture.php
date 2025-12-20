@@ -44,6 +44,7 @@ class Manufacture extends CI_Controller {
             $manufacture_email     = $this->input->post('manufacture_email');
             $manufacture_phone     = $this->input->post('manufacture_phone');
             $manufacture_address     = $this->input->post('manufacture_address');
+            $manufacture_description     = $this->input->post('manufacture_description');
 
             // echo $categories; exit;
 
@@ -78,6 +79,7 @@ class Manufacture extends CI_Controller {
                 'manufacture_phone'  => $manufacture_phone,
                 'manufacture_address'  => $manufacture_address,
                 'manufacture_image'  => $manufacture_image,
+                'manufacture_description'  => $manufacture_description,
                 'is_active' => 0
             ];
 
@@ -124,6 +126,7 @@ class Manufacture extends CI_Controller {
             $manufacture_email     = $this->input->post('manufacture_email');
             $manufacture_phone     = $this->input->post('manufacture_phone');
             $manufacture_address     = $this->input->post('manufacture_address');
+            $manufacture_description     = $this->input->post('manufacture_description');
 
             // Upload banner image
             $manufacture_image = '';
@@ -167,9 +170,12 @@ class Manufacture extends CI_Controller {
                 'manufacture_email'  => $manufacture_email,
                 'manufacture_phone'  => $manufacture_phone,
                 'manufacture_address'  => $manufacture_address,
+                'manufacture_description'  => $manufacture_description,
                 'manufacture_image'  => $manufacture_image,
                 'is_active' => 0
             ];
+
+            // print_r($data); exit;
 
             $this->db->where('id', $edit_id); // Replace 'id' with your primary key column
             $updated = $this->db->update('tbl_manufacture', $data);

@@ -125,7 +125,7 @@
 
         .form-group textarea {
             resize: vertical;
-            min-height: 150px;
+            /* min-height: 150px; */
         }
 
         .submit-btn {
@@ -137,7 +137,7 @@
             font-size: 16px;
             cursor: pointer;
             transition: background 0.3s;
-            justify-self: start;
+            justify-self: end;
         }
 
         .submit-btn:hover {
@@ -149,9 +149,62 @@
     .about-content, .contact-content {
         grid-template-columns: 1fr;
     }
+    .contact-contents {
+        grid-template-columns: 1fr !important;
+    }
+    /* .contact-text ul li{
+        display: inline-block !important;
+    } */
 }
 
  .form-row 
  {
  grid-template-columns: 1fr;
+}
+
+.contact-text h2,h3{
+    font-size: 1.2rem;
+    color: #222222;
+    margin-bottom: 15px;
+    font-weight: bold;
+   
+}
+
+.contact-text p{
+        color: #555;
+    /* margin-bottom: 30px; */
+    font-size: 1.05rem;
+}
+
+.contact-text ul{
+    list-style: none;
+    padding: 0;
+}
+
+.contact-text ul li{
+    padding: 10px 0;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.contact-text li::before {
+    content: "\f058";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    left: 0;
+    top: 2px;
+    font-size: 16px;
+    color: #e74c3c;
+    }
+
+        .contact-contents {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 50px;
+        }
+
+ul li > *:last-child {
+    margin-right: 0;
 }

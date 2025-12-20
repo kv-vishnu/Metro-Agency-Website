@@ -151,6 +151,13 @@
                                           value="<?= $manufacture['manufacture_address']; ?>">
                                       <div class="error" id="error_manufacture_edit_address" style="color:red;"></div>
                                   </div>
+
+                                    <div class="mb-3">
+                                  <label class="form-label">Description</label>
+                                  <textarea class="form-control summernote" id="manufacture_edit_description" name="manufacture_edit_description"
+                                      rows="3"><?= $manufacture['manufacture_description']; ?></textarea>
+                                  <div class="error" id="error_manufacture_edit_description" style="color:red;"></div>
+                                </div>
                                   <div class="mb-3">
                                       <label class="form-label">Image</label>
                                       <input type="file" class="form-control" id="manufacture_edit_image" name="manufacture_edit_image">

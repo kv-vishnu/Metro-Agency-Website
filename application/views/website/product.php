@@ -8,11 +8,30 @@
     </div>
 </div>
 
+
+
+<section id="product" class="section">
+<?php if (!empty($manufacture_description)): ?>
+    <div class="container">
+        <h2 class="section-title">
+            <?= $manufacture_description['manufacture_title'] ?? '' ?>
+        </h2>
+
+        <div class="product-contents">
+            <div class="product-text">
+                <?= $manufacture_description['manufacture_description'] ?? '' ?>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>
+</section>
+
+
  <!-- Filter Section -->
     <div class="container">
         <div class="filter-section">
             <div class="">
-                <h5 class="mb-3">Filter by Category</h5>
+                <h5 class="mb-3">Product Categories</h5>
                  <?php foreach ($categories as $category): ?>
                 <button class="filter-btn" data-category="<?php echo $category['id']; ?>"><?php echo $category['category_title']; ?></button>
                      <?php endforeach; ?>
